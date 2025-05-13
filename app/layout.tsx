@@ -1,5 +1,16 @@
 import { ReactNode } from "react";
 import "./globals.css";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: {
+    default: "TechCrunch",
+    template: "%s TechCrunch",
+  },
+  description:
+    "Stay informed with real-time news on politics, tech, sports, and more.",
+};
 
 interface RootLayoutPropsType {
   children: ReactNode;
