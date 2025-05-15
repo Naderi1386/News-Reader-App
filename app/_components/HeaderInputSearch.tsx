@@ -1,8 +1,10 @@
+"use client";
+
+import { useState } from "react";
 
 const HeaderInputSearch = () => {
-  return (
-    <div>HeaderInputSearch</div>
-  )
-}
+  const [inputSearch, setInputSearch] = useState("");
+  return <form>HeaderInputSearch</form>;
+};
 
-export default HeaderInputSearch
+export default HeaderInputSearch;
