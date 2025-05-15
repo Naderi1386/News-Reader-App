@@ -1,3 +1,4 @@
+import { IoMenuOutline } from "react-icons/io5";
 
 const HeaderDrawer = () => {
   return (
@@ -5,8 +6,11 @@ const HeaderDrawer = () => {
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
-        <label htmlFor="my-drawer" className="btn btn-primary drawer-button shadow-none">
-          Open drawer
+        <label
+          htmlFor="my-drawer"
+          className="btn btn-sm bg-custome-green drawer-button shadow-none"
+        >
+          <IoMenuOutline size={20} />
         </label>
       </div>
       <div className="drawer-side">
@@ -27,6 +31,6 @@ const HeaderDrawer = () => {
       </div>
     </div>
   );
-}
+};
 
-export default HeaderDrawer
+export default HeaderDrawer;
