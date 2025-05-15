@@ -10,7 +10,7 @@ const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div
-      className={`flex gap-8 items-center justify-end  ${
+      className={`flex gap-8 items-center justify-between  ${
         !isSearchOpen && "justify-between"
       } `}
     >
