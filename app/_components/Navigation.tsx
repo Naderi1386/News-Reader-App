@@ -18,14 +18,14 @@ const Navigation = () => {
             <li key={navItem.href}>
               <Link
                 href={navItem.href}
-                className="block cursor-pointer font-semibold transition-all duration-500 hover:underline-offset-8 hover:text-custome-green hover:underline"
+                className="block cursor-pointer font-semibold transition-all duration-500 delay-100 border-b-[1.4px] border-solid border-transparent hover:border-b-custome-green hover:text-custome-green "
               >
                 {navItem.text}
               </Link>
             </li>
           ))}
         </ul>
-      <NavigationDropDown />
+        <NavigationDropDown />
       </nav>
     </div>
   );
