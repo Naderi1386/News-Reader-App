@@ -25,8 +25,8 @@ const Navigation = () => {
             </li>
           ))}
         </ul>
-      </nav>
       <NavigationDropDown />
+      </nav>
     </div>
   );
 };
