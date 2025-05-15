@@ -1,7 +1,7 @@
 import Link from "next/link";
 import NavigationDropDown from "./NavigationDropDown";
 
-const navigationItems = [
+ const navigationItems = [
   { text: "BBC News", href: "/news?sources=bbc-news" },
   {
     text: "United States",
