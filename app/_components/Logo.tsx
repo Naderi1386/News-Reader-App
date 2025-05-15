@@ -8,6 +8,8 @@ const Logo = () => {
         className="object-cover"
         alt="Logo"
         src={"/images/logo.svg"}
+        quality={50}
+        priority
       />
     </div>
   );

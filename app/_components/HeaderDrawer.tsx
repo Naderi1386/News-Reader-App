@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IoMenuOutline } from "react-icons/io5";
+import Logo from "./Logo";
 
 const items = [
   { text: "BBC News", href: "/news?sources=bbc-news" },
@@ -34,13 +35,18 @@ const HeaderDrawer = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-custome-dark text-base-content min-h-full w-80 p-4">
-          {items.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href}>{item.text}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className="text-base-content min-h-full w-80 p-2 bg-custome-dark">
+          <div className="flex items-center justify-center py-6">
+            <Logo />
+          </div>
+          <ul className="menu   ">
+            {items.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href}>{item.text}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
