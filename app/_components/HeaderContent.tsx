@@ -4,21 +4,26 @@ import HeaderSearchBtn from "./HeaderSearchBtn";
 import Navigation from "./Navigation";
 import HeaderInputSearch from "./HeaderInputSearch";
 import { AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
 
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <div className={`flex gap-8 items-center justify-end  ${!isSearchOpen && "justify-between"} `}>
-        {!isSearchOpen ? (
-          <Navigation />
-        ) : (
-          <AnimatePresence>
-
+    <div
+      className={`flex gap-8 items-center justify-end  ${
+        !isSearchOpen && "justify-between"
+      } `}
+    >
+      <Logo />
+      {!isSearchOpen ? (
+        <Navigation />
+      ) : (
+        <AnimatePresence>
           <div className="grow">
             <HeaderInputSearch />
           </div>
-          </AnimatePresence>
-        )}
+        </AnimatePresence>
+      )}
 
       <HeaderSearchBtn
         isSearchOpen={isSearchOpen}
