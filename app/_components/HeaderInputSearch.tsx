@@ -7,7 +7,7 @@ const HeaderInputSearch = () => {
   const handleSubmit = () => {};
   return (
     <form
-      className="border-b-2 border-white border-solid pb-2 flex"
+      className=" max-w-[800px] mx-auto border-b-2 border-white border-solid pb-2 flex"
       onSubmit={(e) => {
         e.preventDefault();
         handleSubmit();
