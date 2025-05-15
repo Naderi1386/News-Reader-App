@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const DropdownItems = [
   { text: "business", href: "/news?category=business" },
   { text: "entertainment", href: "/news?category=entertainment" },
@@ -22,12 +24,16 @@ const NavigationDropDown = () => {
         tabIndex={0}
         className="dropdown-content menu bg-white rounded-box z-1 w-52 p-2 shadow-sm"
       >
-        <li>
-          <a>Item 1</a>
-        </li>
-        <li>
-          <a>Item 2</a>
-        </li>
+        {DropdownItems.map((dropItem) => (
+          <li key={dropItem.href}>
+            <Link
+              href={dropItem.href}
+              className="text-black font-semibold block transition-all duration-500 hover:text-custome-green"
+            >
+              {dropItem.text}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
