@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "daisyui";
 @theme {
   --color-custome-dark: #212623;
   --color-custome-green: #0a8935;
