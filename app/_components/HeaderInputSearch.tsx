@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 
@@ -6,7 +7,13 @@ const HeaderInputSearch = () => {
   const [inputSearch, setInputSearch] = useState("");
   const handleSubmit = () => {};
   return (
-    <form
+    <motion.form
+      transition={{
+        duration: 0.4,
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 30 }}
       className=" max-w-[800px] mx-auto border-b-2 border-white border-solid pb-2 flex"
       onSubmit={(e) => {
         e.preventDefault();
@@ -24,7 +31,7 @@ const HeaderInputSearch = () => {
       <button className="border-none outline-none text-white cursor-pointer text-sm font-semibold">
         submit
       </button>
-    </form>
+    </motion.form>
   );
 };
 
