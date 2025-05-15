@@ -11,7 +11,7 @@ const navigationItems = [
 
 const Navigation = () => {
   return (
-    <div className="text-white">
+    <div className="text-white hidden md:block">
       <nav className="flex items-center gap-4">
         <ul className="flex items-center gap-4">
           {navigationItems.map((navItem) => (

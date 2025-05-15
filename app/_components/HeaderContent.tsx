@@ -8,7 +8,7 @@ import { AnimatePresence } from "framer-motion";
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <div className={`flex gap-8 items-center  ${!isSearchOpen && "justify-between"} `}>
+    <div className={`flex gap-8 items-center justify-end  ${!isSearchOpen && "justify-between"} `}>
         {!isSearchOpen ? (
           <Navigation />
         ) : (
