@@ -1,9 +1,9 @@
 
 const Header = () => {
   return (
-    <div>
+    <header className="bg-custome-dark px-18 py-5">
       
-    </div>
+    </header>
   )
 }
 

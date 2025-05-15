@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutPropsType) {
         className={`${inter.className} overflow-x-hidden overflow-y-auto antialiased`}
       >
         <Header />
-        <main>{children}</main>
+        <main className="bg-white">{children}</main>
         <footer>footer</footer>
       </body>
     </html>
