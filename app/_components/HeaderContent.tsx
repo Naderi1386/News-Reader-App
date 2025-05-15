@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import HeaderInputSearch from "./HeaderInputSearch";
 import { AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
+import HeaderDrawer from "./HeaderDrawer";
 
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -26,6 +27,7 @@ const HeaderContent = () => {
         isSearchOpen={isSearchOpen}
         onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
       />
+      {!isSearchOpen && <HeaderDrawer />}
     </div>
   );
 };
