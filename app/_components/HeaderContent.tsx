@@ -3,18 +3,22 @@ import { useState } from "react";
 import HeaderSearchBtn from "./HeaderSearchBtn";
 import Navigation from "./Navigation";
 import HeaderInputSearch from "./HeaderInputSearch";
+import { AnimatePresence } from "framer-motion";
 
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div className={`flex items-center ${!isSearchOpen && "justify-between"} `}>
-      {!isSearchOpen ? (
-        <Navigation />
-      ) : (
-        <div className="grow">
-          <HeaderInputSearch />
-        </div>
-      )}
+        {!isSearchOpen ? (
+          <Navigation />
+        ) : (
+          <AnimatePresence>
+
+          <div className="grow">
+            <HeaderInputSearch />
+          </div>
+          </AnimatePresence>
+        )}
 
       <HeaderSearchBtn
         isSearchOpen={isSearchOpen}

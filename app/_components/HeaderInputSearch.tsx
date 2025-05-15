@@ -9,11 +9,10 @@ const HeaderInputSearch = () => {
   return (
     <motion.form
       transition={{
-        duration: 0.4,
+        duration: 0.1,
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 30 }}
       className=" max-w-[800px] mx-auto border-b-2 border-white border-solid pb-2 flex"
       onSubmit={(e) => {
         e.preventDefault();
