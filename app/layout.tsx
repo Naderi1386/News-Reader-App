@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import "./globals.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Header from "./_components/Header";
 
 const inter = Inter({
   display: "swap",
@@ -24,7 +25,13 @@ interface RootLayoutPropsType {
 export default function RootLayout({ children }: RootLayoutPropsType) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body
+        className={`${inter.className} overflow-x-hidden overflow-y-auto antialiased`}
+      >
+        <Header />
+        <main>{children}</main>
+        <footer>footer</footer>
+      </body>
     </html>
   );
 }
