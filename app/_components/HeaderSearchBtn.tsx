@@ -14,7 +14,7 @@ const HeaderSearchBtn = ({
     <span
       onClick={onClick}
       role="button"
-      className="cursor-pointer rounded-[100%] transition-all duration-300 border border-solid border-transparent p-2.5 hover:border-white"
+      className="block cursor-pointer rounded-[100%] transition-all duration-300 border border-solid border-transparent p-1.5 sm:p-2.5 hover:border-white"
     >
       {isSearchOpen ? (
         <IoCloseOutline size={20} />

@@ -13,7 +13,7 @@ const HeaderInputSearch = () => {
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      className=" max-w-[800px] mx-auto border-b-2 border-white border-solid pb-2 flex"
+      className=" w-full sm:max-w-[800px] mx-auto border-b-2 border-white border-solid pb-1 sm:pb-2 flex"
       onSubmit={(e) => {
         e.preventDefault();
         handleSubmit();
@@ -25,9 +25,9 @@ const HeaderInputSearch = () => {
         value={inputSearch}
         onChange={(e) => setInputSearch(e.target.value)}
         placeholder="Searching..."
-        className="border-none outline-none text-white/85 grow"
+        className="border-none outline-none text-sm sm:text-base text-white/85 grow"
       />
-      <button className="border-none outline-none text-white cursor-pointer text-sm font-semibold">
+      <button className="border-none outline-none text-white cursor-pointer text-xs sm:text-sm font-semibold">
         submit
       </button>
     </motion.form>
