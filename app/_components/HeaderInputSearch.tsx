@@ -6,21 +6,25 @@ const HeaderInputSearch = () => {
   const [inputSearch, setInputSearch] = useState("");
   const handleSubmit = () => {};
   return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}
-      >
-        <input
-          type="text"
-          value={inputSearch}
-          onChange={(e) => setInputSearch(e.target.value)}
-          className="border-none outline-none"
-        />
-      </form>
-    </div>
+    <form
+      className="border-b-2 border-white border-solid pb-2 flex"
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit();
+      }}
+    >
+      <input
+        required
+        type="text"
+        value={inputSearch}
+        onChange={(e) => setInputSearch(e.target.value)}
+        placeholder="Searching..."
+        className="border-none outline-none text-white/85 grow"
+      />
+      <button className="border-none outline-none text-white cursor-pointer text-sm font-semibold">
+        submit
+      </button>
+    </form>
   );
 };
 
