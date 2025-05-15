@@ -22,12 +22,13 @@ const HeaderContent = () => {
           </div>
         </AnimatePresence>
       )}
-
-      <HeaderSearchBtn
-        isSearchOpen={isSearchOpen}
-        onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
-      />
-      {!isSearchOpen && <HeaderDrawer />}
+      <div className="flex items-center gap-2">
+        <HeaderSearchBtn
+          isSearchOpen={isSearchOpen}
+          onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
+        />
+        {!isSearchOpen && <HeaderDrawer />}
+      </div>
     </div>
   );
 };
