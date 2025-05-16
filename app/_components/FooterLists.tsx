@@ -2,7 +2,16 @@ import FooterList from "./FooterList";
 
 const FooterLists = () => {
   return (
-    <div className="pr-34">
+    <div className="pr-34 flex items-start gap-28">
+      <FooterList
+        items={[
+          { text: "BBC News", href: "/news?sources=bbc-news" },
+          {
+            text: "United States",
+            href: "/news?country=us",
+          },
+        ]}
+      />{" "}
       <FooterList
         items={[
           { text: "business", href: "/news?category=business" },
