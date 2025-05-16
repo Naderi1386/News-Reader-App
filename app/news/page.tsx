@@ -1,4 +1,9 @@
-import { getBBCNews, getUSNews, NewsType } from "../_lib/services";
+import {
+  getBBCNews,
+  getNewsByCategory,
+  getUSNews,
+  NewsType,
+} from "../_lib/services";
 
 interface SearchParamsType {
   sources?: string;
@@ -30,6 +35,8 @@ const page = async (props: PagePropsType) => {
   let data: NewsType[] = [];
   if (sources) data = (await getBBCNews()).articles;
   if (country) data = (await getUSNews()).articles;
+  if (category) data = (await getNewsByCategory(category)).articles;
+  
 
   return <div></div>;
 };
