@@ -11,7 +11,7 @@ const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div className={`flex gap-3 sm:gap-8 items-center justify-between `}>
-      {!isSearchOpen && <Logo />}
+      {!isSearchOpen && <Logo type="header" />}
 
       {!isSearchOpen ? (
         <Navigation />
