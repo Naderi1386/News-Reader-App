@@ -11,6 +11,11 @@ export interface NewsType {
   publishedAt: string;
   content: string;
 }
+interface ResponseType {
+  status: string;
+  totalResults: number;
+  articles: NewsType[];
+}
 export const getBBCNews = async () => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
@@ -20,9 +25,25 @@ export const getBBCNews = async () => {
   try {
     const request = await fetch(req);
     const response = await request.json();
-    return response as NewsType[];
+    return response as ResponseType;
   } catch (error) {
     console.error(error);
     throw new Error("BBC News Could Not Be Loaded !");
+  }
+};
+
+export const getUSNews = async () => {
+  const url =
+    "https://newsapi.org/v2/top-headlines?" +
+    "sources=bbc-news&" +
+    `apiKey=${process.env.API_KEY}`;
+  const req = new Request(url);
+  try {
+    const request = await fetch(req);
+    const response = await request.json();
+    return response as ResponseType;
+  } catch (error) {
+    console.error(error);
+    throw new Error("United States News Could Not Be Loaded !");
   }
 };
