@@ -3,6 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 const inter = Inter({
   display: "swap",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }: RootLayoutPropsType) {
       >
         <Header />
         <main className="bg-white">{children}</main>
-        <footer>footer</footer>
+       <Footer />
       </body>
     </html>
   );
