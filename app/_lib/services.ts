@@ -20,7 +20,7 @@ export const getBBCNews = async () => {
   try {
     const request = await fetch(req);
     const response = await request.json();
-    return response;
+    return response as NewsType[];
   } catch (error) {
     console.error(error);
     throw new Error("BBC News Could Not Be Loaded !");

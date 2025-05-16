@@ -1,3 +1,5 @@
+import { getBBCNews, NewsType } from "../_lib/services";
+
 interface SearchParamsType {
   sources?: string;
   country?: string;
@@ -19,7 +21,15 @@ export const generateMetadata = async (props: PagePropsType) => {
   };
 };
 
-const page = ({ searchParams }: PagePropsType) => {
+const page = async (props: PagePropsType) => {
+  const [category, country, sources] = await Promise.all([
+    (await props.searchParams).category,
+    (await props.searchParams).country,
+    (await props.searchParams).sources,
+  ]);
+  let data: NewsType[] = [];
+  if (sources) data = await getBBCNews();
+
   return <div>page</div>;
 };
 
