@@ -8,6 +8,14 @@ interface PagePropsType {
   searchParams: Promise<SearchParamsType>;
 }
 
+export const generateMetadata = async (props: PagePropsType) => {
+  const [category, country, sources] = await Promise.all([
+    (await props.searchParams).category,
+    (await props.searchParams).country,
+    (await props.searchParams).sources,
+  ]);
+};
+
 const page = ({ searchParams }: PagePropsType) => {
   return <div>page</div>;
 };
