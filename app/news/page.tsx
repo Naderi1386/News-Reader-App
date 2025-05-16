@@ -9,7 +9,6 @@ interface PagePropsType {
 }
 
 const page = ({ searchParams }: PagePropsType) => {
-    
   return <div>page</div>;
 };
 
