@@ -4,7 +4,8 @@ interface NewsItemPropsType {
   details: NewsType;
 }
 const NewsItem = ({ details }: NewsItemPropsType) => {
-  return <div>NewsItem</div>;
+  const { title } = details;
+  return <li>{title}</li>;
 };
 
 export default NewsItem;
