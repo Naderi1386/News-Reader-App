@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface LogoPropsType {
   type: "header" | "footer";
@@ -7,7 +8,7 @@ interface LogoPropsType {
 const Logo = ({ type }: LogoPropsType) => {
   if (type === "footer")
     return (
-      <div className="w-20 h-4 relative block md:hidden">
+      <Link href={"/"} className="w-24 h-12 relative block">
         <Image
           fill
           className="object-cover"
@@ -16,7 +17,7 @@ const Logo = ({ type }: LogoPropsType) => {
           quality={50}
           priority
         />
-      </div>
+      </Link>
     );
   return (
     <div className="w-20 h-4 relative block md:hidden">
