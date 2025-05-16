@@ -1,4 +1,5 @@
 import NewsBigTitle from "../_components/NewsBigTitle";
+import NewsList from "../_components/NewsList";
 import { capitalizeFirstLetter } from "../_lib/helper";
 import {
   getBBCNews,
@@ -36,10 +37,10 @@ const page = async (props: PagePropsType) => {
     (await props.searchParams).country,
     (await props.searchParams).sources,
   ]);
-  let data: NewsType[] = [];
-  if (sources) data = (await getBBCNews()).articles;
-  if (country) data = (await getUSNews()).articles;
-  if (category) data = (await getNewsByCategory(category)).articles;
+  let news: NewsType[] = [];
+  if (sources) news = (await getBBCNews()).articles;
+  if (country) news = (await getUSNews()).articles;
+  if (category) news = (await getNewsByCategory(category)).articles;
 
   return (
     <div className="text-black px-4 md:px-18 py-18">
@@ -47,7 +48,7 @@ const page = async (props: PagePropsType) => {
         <NewsBigTitle>
           {category ? category : country ? "United states" : "BBC"} News
         </NewsBigTitle>
-
+        <NewsList news={news} />
       </div>
     </div>
   );

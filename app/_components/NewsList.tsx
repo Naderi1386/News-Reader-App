@@ -4,7 +4,7 @@ interface NewsListPropsType {
   news: NewsType[];
 }
 const NewsList = ({ news }: NewsListPropsType) => {
-  return <ul>NewsList</ul>;
+  return <ul></ul>;
 };
 
 export default NewsList;
