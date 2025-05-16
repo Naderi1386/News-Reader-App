@@ -35,11 +35,11 @@ const HeaderDrawer = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="text-base-content min-h-full w-80 p-2 bg-custome-dark">
+        <div className="text-base-content min-h-full w-72 p-2 bg-custome-dark">
           <div className="flex items-center justify-center py-6">
-            <Logo />
+            <Logo type="header" />
           </div>
-          <ul className="menu   ">
+          <ul className="menu">
             {items.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>{item.text}</Link>
