@@ -43,10 +43,11 @@ const page = async (props: PagePropsType) => {
 
   return (
     <div className="text-black px-4 md:px-18 py-18">
-      <div>
+      <div className="space-y-10">
         <NewsBigTitle>
           {category ? category : country ? "United states" : "BBC"} News
         </NewsBigTitle>
+
       </div>
     </div>
   );
