@@ -40,7 +40,7 @@ const page = async (props: PagePropsType) => {
   if (country) data = (await getUSNews()).articles;
   if (category) data = (await getNewsByCategory(category)).articles;
 
-  return <div></div>;
+  return <div className="text-black px-4 md:px-18 py-26">sss</div>;
 };
 
 export default page;
