@@ -1,8 +1,21 @@
+export interface NewsType {
+  source: {
+    id: string;
+    name: string;
+  };
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  content: string;
+}
 export const getBBCNews = async () => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     "sources=bbc-news&" +
-    "apiKey=6e595de11f6249a9bb6b5c3a8981e89b";
+    `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
     const request = await fetch(req);
