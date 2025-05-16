@@ -1,3 +1,4 @@
+import NewsBigTitle from "../_components/NewsBigTitle";
 import { capitalizeFirstLetter } from "../_lib/helper";
 import {
   getBBCNews,
@@ -40,7 +41,15 @@ const page = async (props: PagePropsType) => {
   if (country) data = (await getUSNews()).articles;
   if (category) data = (await getNewsByCategory(category)).articles;
 
-  return <div className="text-black px-4 md:px-18 py-26">sss</div>;
+  return (
+    <div className="text-black px-4 md:px-18 py-18">
+      <div>
+        <NewsBigTitle>
+          {category ? category : country ? "United states" : "BBC"} News
+        </NewsBigTitle>
+      </div>
+    </div>
+  );
 };
 
 export default page;

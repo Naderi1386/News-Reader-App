@@ -4,7 +4,7 @@ interface NewsBigTitlePropsType {
   children: ReactNode;
 }
 const NewsBigTitle = ({ children }: NewsBigTitlePropsType) => {
-  return <h1 className="text-3xl text-custome-green font-bold">{children}</h1>;
+  return <h1 className="text-6xl text-custome-green font-bold capitalize">{children}</h1>;
 };
 
 export default NewsBigTitle;
