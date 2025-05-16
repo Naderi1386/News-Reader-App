@@ -1,3 +1,4 @@
+import { capitalizeFirstLetter } from "../_lib/helper";
 import {
   getBBCNews,
   getNewsByCategory,
@@ -15,14 +16,16 @@ interface PagePropsType {
   searchParams: Promise<SearchParamsType>;
 }
 export const generateMetadata = async (props: PagePropsType) => {
-  const [category, country, sources] = await Promise.all([
+  const [category, country] = await Promise.all([
     (await props.searchParams).category,
     (await props.searchParams).country,
-    (await props.searchParams).sources,
   ]);
-  const title = category ? category : country ? country : sources;
+  const title = category ? category : country ? "US" : "BBC News";
+  const capitalizedTitle = capitalizeFirstLetter(title);
   return {
-    title: `${title ? title.replaceAll("-", " ").toUpperCase() : "BBC"}`,
+    title: `${
+      capitalizedTitle ? capitalizedTitle.replaceAll("-", " ") : "BBC News"
+    }`,
   };
 };
 
@@ -36,7 +39,6 @@ const page = async (props: PagePropsType) => {
   if (sources) data = (await getBBCNews()).articles;
   if (country) data = (await getUSNews()).articles;
   if (category) data = (await getNewsByCategory(category)).articles;
-  
 
   return <div></div>;
 };
