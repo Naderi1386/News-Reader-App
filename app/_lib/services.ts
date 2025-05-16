@@ -47,3 +47,19 @@ export const getUSNews = async () => {
     throw new Error("United States News Could Not Be Loaded !");
   }
 };
+
+export const getNewsByCategory = async (category: string) => {
+  const url =
+    "https://newsapi.org/v2/top-headlines?" +
+    `category=${category}&` +
+    `apiKey=${process.env.API_KEY}`;
+  const req = new Request(url);
+  try {
+    const request = await fetch(req);
+    const response = await request.json();
+    return response as ResponseType;
+  } catch (error) {
+    console.error(error);
+    throw new Error(`${category.toUpperCase()} News Could Not Be Loaded !`);
+  }
+};
