@@ -35,7 +35,7 @@ export const getBBCNews = async () => {
 export const getUSNews = async () => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
-    "sources=bbc-news&" +
+    "country=us&" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
