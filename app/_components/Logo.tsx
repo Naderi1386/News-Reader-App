@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-const Logo = () => {
+interface LogoPropsType {
+  type: "header" | "footer";
+}
+
+const Logo = ({ type }: LogoPropsType) => {
+  
   return (
     <div className="w-20 h-4 relative block md:hidden">
       <Image
