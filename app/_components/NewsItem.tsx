@@ -1,4 +1,5 @@
 import { NewsType } from "../_lib/services";
+import NewsItemDescription from "./NewsItemDescription";
 import NewsItemMainTitle from "./NewsItemMainTitle";
 import NewsItemSmallTItle from "./NewsItemSmallTItle";
 import NewsPoster from "./NewsPoster";
@@ -15,7 +16,7 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
         <NewsItemSmallTItle />
         <NewsItemMainTitle title={title} />
         <div className="flex items-center justify-between mt-1">
-            
+          <NewsItemDescription description={description} />
         </div>
       </div>
     </li>
