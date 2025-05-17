@@ -9,6 +9,9 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
   return (
     <li className="flex items-center gap-10 py-5">
       <NewsPoster img={urlToImage} />
+      <div>
+        
+      </div>
     </li>
   );
 };
