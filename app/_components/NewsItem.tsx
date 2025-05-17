@@ -1,4 +1,5 @@
 import { NewsType } from "../_lib/services";
+import NewsItemSmallTItle from "./NewsItemSmallTItle";
 import NewsPoster from "./NewsPoster";
 
 interface NewsItemPropsType {
@@ -10,7 +11,7 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
     <li className="flex items-center gap-10 py-5">
       <NewsPoster img={urlToImage} />
       <div>
-        
+        <NewsItemSmallTItle />
       </div>
     </li>
   );
