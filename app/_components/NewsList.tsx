@@ -6,7 +6,7 @@ interface NewsListPropsType {
 }
 const NewsList = ({ news }: NewsListPropsType) => {
   return (
-    <ul>
+    <ul className="divide-y divide-stone-300">
       {news.map((details, index) => (
         <NewsItem details={details} key={index + 1} />
       ))}
