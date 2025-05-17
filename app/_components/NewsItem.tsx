@@ -7,13 +7,16 @@ interface NewsItemPropsType {
   details: NewsType;
 }
 const NewsItem = ({ details }: NewsItemPropsType) => {
-  const { title, urlToImage } = details;
+  const { title, urlToImage, description } = details;
   return (
     <li className="flex items-center gap-10 py-5">
       <NewsPoster img={urlToImage} />
-      <div>
+      <div className="grow">
         <NewsItemSmallTItle />
         <NewsItemMainTitle title={title} />
+        <div className="flex items-center justify-between mt-1">
+            
+        </div>
       </div>
     </li>
   );
