@@ -1,4 +1,5 @@
 import { NewsType } from "../_lib/services";
+import NewsItemMainTitle from "./NewsItemMainTitle";
 import NewsItemSmallTItle from "./NewsItemSmallTItle";
 import NewsPoster from "./NewsPoster";
 
@@ -12,6 +13,7 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
       <NewsPoster img={urlToImage} />
       <div>
         <NewsItemSmallTItle />
+        <NewsItemMainTitle title={title} />
       </div>
     </li>
   );
