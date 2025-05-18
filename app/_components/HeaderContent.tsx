@@ -5,8 +5,9 @@ import Navigation from "./Navigation";
 import HeaderInputSearch from "./HeaderInputSearch";
 import { AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
-import HeaderDrawer from "./HeaderDrawer";
+const HeaderDrawer = dynamic(() => import("./HeaderDrawer"));
 import HeaderLogoWrraper from "./HeaderLogoWrraper";
+import dynamic from "next/dynamic";
 
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);

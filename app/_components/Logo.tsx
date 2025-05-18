@@ -8,10 +8,10 @@ interface LogoPropsType {
 const Logo = ({ type }: LogoPropsType) => {
   if (type === "footer")
     return (
-      <Link href={"/"} className="w-24 h-12 relative block">
+      <Link href={"/"} className=" block">
         <Image
-          fill
-          className="object-cover"
+        width={100}
+        height={15}
           alt="Logo"
           src={"/images/logo-footer.svg"}
           quality={50}

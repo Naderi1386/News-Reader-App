@@ -29,7 +29,7 @@ const HeaderDrawer = () => {
           <IoMenuOutline size={20} />
         </label>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side z-[100000]">
         <label
           htmlFor="my-drawer"
           aria-label="close sidebar"
