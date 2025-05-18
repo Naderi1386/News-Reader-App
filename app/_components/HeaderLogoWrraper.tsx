@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 
 const HeaderLogoWrraper = () => {
@@ -21,17 +21,21 @@ const HeaderLogoWrraper = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  if (!show) return null;
+
   return (
-    <motion.div
-      transition={{ duration: 0.3 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="hidden md:block"
-    >
-      <Logo type="header" />
-    </motion.div>
+    <AnimatePresence mode="wait">
+      {show && (
+        <motion.div
+          transition={{ duration: 0.45 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="hidden md:block"
+        >
+          <Logo type="header" />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
