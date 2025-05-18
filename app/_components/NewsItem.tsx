@@ -16,7 +16,7 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
       <div className="grow">
         <NewsItemSmallTItle />
         <NewsItemMainTitle title={title} />
-        <div className="flex items-center justify-between mt-1">
+        <div className="flex items-center justify-between mt-3">
           <NewsItemDescription description={description} />
           <NewsItemPublishedDate date={publishedAt} />
         </div>

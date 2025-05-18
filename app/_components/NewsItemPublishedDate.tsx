@@ -2,7 +2,7 @@ interface NewsItemPublishedDatePropsType {
   date: string;
 }
 const NewsItemPublishedDate = ({ date }: NewsItemPublishedDatePropsType) => {
-  return <span>NewsItemPublishedDate</span>;
+  return <span>{date}</span>;
 };
 
 export default NewsItemPublishedDate;
