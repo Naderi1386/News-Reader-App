@@ -42,7 +42,6 @@ export function timeAgo(dateString: string): string {
     const hours = Math.floor(diff / units.hour);
     diff -= hours * units.hour;
     parts.push(hours === 1 ? "1 hour" : `${hours} hours`);
-    if (diff > 0) parts.push(diff === 1 ? "1 second" : `${diff} seconds`);
   } else {
     parts.push(diff === 1 ? "1 second" : ` ${diff} seconds`);
   }
