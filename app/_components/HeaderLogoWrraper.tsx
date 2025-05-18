@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Logo from "./Logo";
 
 const HeaderLogoWrraper = () => {
@@ -22,9 +23,15 @@ const HeaderLogoWrraper = () => {
   }, []);
   if (!show) return null;
   return (
-    <div className="hidden md:block">
+    <motion.div
+      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="hidden md:block"
+    >
       <Logo type="header" />
-    </div>
+    </motion.div>
   );
 };
 
