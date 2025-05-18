@@ -1,4 +1,10 @@
-import { getBBCNews, getNewsByCategory, getUSNews, NewsType } from "../_lib/services";
+import { memo } from "react";
+import {
+  getBBCNews,
+  getNewsByCategory,
+  getUSNews,
+  NewsType,
+} from "../_lib/services";
 import NewsItem from "./NewsItem";
 
 interface NewsListPropsType {
@@ -6,7 +12,11 @@ interface NewsListPropsType {
   sources: string | undefined;
   country: string | undefined;
 }
-const NewsList = async ({ category, country, sources }: NewsListPropsType) => {
+const NewsList = memo(async function NewsList({
+  category,
+  country,
+  sources,
+}: NewsListPropsType) {
   let news: NewsType[] = [];
   if (sources) news = (await getBBCNews()).articles;
   if (country) news = (await getUSNews()).articles;
@@ -18,6 +28,6 @@ const NewsList = async ({ category, country, sources }: NewsListPropsType) => {
       ))}
     </ul>
   );
-};
+});
 
 export default NewsList;
