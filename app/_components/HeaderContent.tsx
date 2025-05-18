@@ -2,12 +2,16 @@
 import { useState } from "react";
 import HeaderSearchBtn from "./HeaderSearchBtn";
 import Navigation from "./Navigation";
-import HeaderInputSearch from "./HeaderInputSearch";
 import { AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+const HeaderLogoWrraper = dynamic(() => import("./HeaderLogoWrraper"), {
+  ssr: false,
+});
+const HeaderInputSearch = dynamic(() => import("./HeaderInputSearch"), {
+  ssr: false,
+});
 const Logo = dynamic(() => import("./Logo"), { ssr: false });
 const HeaderDrawer = dynamic(() => import("./HeaderDrawer"), { ssr: false });
-import HeaderLogoWrraper from "./HeaderLogoWrraper";
-import dynamic from "next/dynamic";
 
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
