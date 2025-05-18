@@ -40,7 +40,10 @@ const page = async (props: PagePropsType) => {
         <NewsBigTitle>
           {category ? category : country ? "United states" : "BBC"} News
         </NewsBigTitle>
-        <Suspense fallback={<Spinner />}>
+        <Suspense
+          key={`${category}&${country}&${sources}`}
+          fallback={<Spinner />}
+        >
           <NewsList category={category} country={country} sources={sources} />
         </Suspense>
       </div>
