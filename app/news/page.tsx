@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import NewsBigTitle from "../_components/NewsBigTitle";
 import NewsList from "../_components/NewsList";
 import { capitalizeFirstLetter } from "../_lib/helper";
+import Spinner from "../_components/Spinner";
 
 interface SearchParamsType {
   sources?: string;
@@ -38,7 +40,9 @@ const page = async (props: PagePropsType) => {
         <NewsBigTitle>
           {category ? category : country ? "United states" : "BBC"} News
         </NewsBigTitle>
-        <NewsList category={category} country={country} sources={sources} />
+        <Suspense fallback={<Spinner />}>
+          <NewsList category={category} country={country} sources={sources} />
+        </Suspense>
       </div>
     </div>
   );
