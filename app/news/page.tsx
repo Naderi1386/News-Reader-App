@@ -1,12 +1,6 @@
 import NewsBigTitle from "../_components/NewsBigTitle";
 import NewsList from "../_components/NewsList";
 import { capitalizeFirstLetter } from "../_lib/helper";
-import {
-  getBBCNews,
-  getNewsByCategory,
-  getUSNews,
-  NewsType,
-} from "../_lib/services";
 
 interface SearchParamsType {
   sources?: string;
@@ -37,10 +31,6 @@ const page = async (props: PagePropsType) => {
     (await props.searchParams).country,
     (await props.searchParams).sources,
   ]);
-  let news: NewsType[] = [];
-  if (sources) news = (await getBBCNews()).articles;
-  if (country) news = (await getUSNews()).articles;
-  if (category) news = (await getNewsByCategory(category)).articles;
 
   return (
     <div className="text-black px-4 md:px-18 py-18">
@@ -48,7 +38,7 @@ const page = async (props: PagePropsType) => {
         <NewsBigTitle>
           {category ? category : country ? "United states" : "BBC"} News
         </NewsBigTitle>
-        <NewsList news={news} />
+        <NewsList category={category} country={country} sources={sources} />
       </div>
     </div>
   );
