@@ -20,7 +20,7 @@ const Logo = ({ type }: LogoPropsType) => {
       </Link>
     );
   return (
-    <div className="w-20 h-4 relative block md:hidden">
+    <Link href={"/"} className="w-20 h-4 relative block ">
       <Image
         fill
         className="object-cover"
@@ -29,7 +29,7 @@ const Logo = ({ type }: LogoPropsType) => {
         quality={50}
         priority
       />
-    </div>
+    </Link>
   );
 };
 

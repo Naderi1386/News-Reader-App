@@ -1,8 +1,11 @@
+import Logo from "./Logo";
 
 const HeaderLogoWrraper = () => {
   return (
-    <div>HeaderLogoWrraper</div>
-  )
-}
+    <div className="hidden md:block">
+      <Logo type="header" />
+    </div>
+  );
+};
 
-export default HeaderLogoWrraper
+export default HeaderLogoWrraper;

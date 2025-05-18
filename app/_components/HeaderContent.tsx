@@ -6,15 +6,23 @@ import HeaderInputSearch from "./HeaderInputSearch";
 import { AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import HeaderDrawer from "./HeaderDrawer";
+import HeaderLogoWrraper from "./HeaderLogoWrraper";
 
 const HeaderContent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div className={`flex gap-3 sm:gap-8 items-center justify-between `}>
-      {!isSearchOpen && <Logo type="header" />}
+      {!isSearchOpen && (
+        <div className="block md:hidden">
+          <Logo type="header" />
+        </div>
+      )}
 
       {!isSearchOpen ? (
-        <Navigation />
+        <div className="flex items-center gap-4">
+          <HeaderLogoWrraper />
+          <Navigation />
+        </div>
       ) : (
         <AnimatePresence>
           <div className="grow">
