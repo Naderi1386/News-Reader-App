@@ -1,4 +1,3 @@
-// app/api/image-proxy/route.ts
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
