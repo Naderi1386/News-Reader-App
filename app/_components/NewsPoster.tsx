@@ -6,15 +6,14 @@ interface NewsPosterPropsType {
 const NewsPoster = ({ img }: NewsPosterPropsType) => {
   const proxiedSrc = `/api/image-proxy?url=${encodeURIComponent(img)}`;
   return (
-    <div className="relative w-[175px] h-[95px] border border-solid border-black/10">
-      <Image
-        fill
-        quality={90}
-        src={proxiedSrc}
-        className="object-cover"
-        alt="NEWS-POSTER"
-      />
-    </div>
+    <Image
+      width={150}
+      height={100}
+      quality={90}
+      src={proxiedSrc}
+      className="object-cover"
+      alt="NEWS-POSTER"
+    />
   );
 };
 
