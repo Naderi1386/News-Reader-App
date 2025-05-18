@@ -16,6 +16,7 @@ const NewsPoster = ({ img }: NewsPosterPropsType) => {
       src={src}
       alt="NEWS-POSTER"
       onError={() => setSrc("/images/empty-news.jpg")}
+      loading="lazy"
     />
   );
 };

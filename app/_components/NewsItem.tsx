@@ -1,9 +1,10 @@
+import dynamic from "next/dynamic";
 import { NewsType } from "../_lib/services";
 import NewsItemDescription from "./NewsItemDescription";
 import NewsItemMainTitle from "./NewsItemMainTitle";
 import NewsItemPublishedDate from "./NewsItemPublishedDate";
 import NewsItemSmallTItle from "./NewsItemSmallTItle";
-import NewsPoster from "./NewsPoster";
+const NewsPoster = dynamic(() => import("./NewsPoster"));
 
 interface NewsItemPropsType {
   details: NewsType;

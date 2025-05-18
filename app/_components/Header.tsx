@@ -1,4 +1,5 @@
-import HeaderContent from "./HeaderContent";
+import dynamic from "next/dynamic";
+const HeaderContent = dynamic(() => import("./HeaderContent"));
 
 const Header = () => {
   return (
