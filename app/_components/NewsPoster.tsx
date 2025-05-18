@@ -11,7 +11,6 @@ const NewsPoster = ({ img }: NewsPosterPropsType) => {
       height={100}
       quality={90}
       src={proxiedSrc}
-      className="object-cover"
       alt="NEWS-POSTER"
     />
   );
