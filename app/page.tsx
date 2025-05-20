@@ -1,10 +1,3 @@
-
-
-
 export default function Home() {
-  return (
-    <div>
-      hello News Reader
-    </div>
-  );
+  return <div>hello News Reader</div>;
 }
