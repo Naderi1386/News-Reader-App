@@ -10,7 +10,11 @@ const HeaderProfile = async () => {
       </Link>
     );
 
-  return <div>HeaderProfile</div>;
+  return (
+    <div>
+      <span className="block text-white text-sm">{session.user?.name}</span>
+    </div>
+  );
 };
 
 export default HeaderProfile;

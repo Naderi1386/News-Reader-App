@@ -2,7 +2,8 @@
 const page = () => {
   return (
     <div className="bg-custome-green">
-      <div className="flex items-center justify-center py-20">
+      <div className="flex flex-col gap-8 items-center justify-center py-20">
+        <h1 className="capitalize text-white font-bold text-4xl italic">log in with your google account</h1>
         <button className="btn btn-lg bg-white text-black border-[#e5e5e5]">
           <svg
             aria-label="Google logo"
