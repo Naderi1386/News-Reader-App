@@ -13,7 +13,7 @@ const HeaderProfile = async () => {
 
   return (
     <div className="avatar">
-      <div className="mask mask-squircle w-24 relative">
+      <div className="mask mask-hexagon-2 w-10 relative">
         <Image
           fill
           className="object-cover"
