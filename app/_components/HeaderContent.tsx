@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import HeaderSearchBtn from "./HeaderSearchBtn";
 import Navigation from "./Navigation";
 import { AnimatePresence } from "framer-motion";
@@ -13,7 +13,11 @@ const HeaderInputSearch = dynamic(() => import("./HeaderInputSearch"), {
 const Logo = dynamic(() => import("./Logo"), { ssr: false });
 const HeaderDrawer = dynamic(() => import("./HeaderDrawer"), { ssr: false });
 
-const HeaderContent = () => {
+interface HeaderContentPropsType {
+  children: ReactNode;
+}
+
+const HeaderContent = ({ children }: HeaderContentPropsType) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div className={`flex gap-3 sm:gap-8 items-center justify-between `}>
@@ -36,6 +40,7 @@ const HeaderContent = () => {
         </AnimatePresence>
       )}
       <div className="flex items-center gap-2">
+        {children}
         <HeaderSearchBtn
           isSearchOpen={isSearchOpen}
           onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
