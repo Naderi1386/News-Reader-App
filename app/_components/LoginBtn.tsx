@@ -1,11 +1,17 @@
-"use client"
+"use client";
 
+import { useTransition } from "react";
 import { login } from "../_lib/actions";
 
 const LoginBtn = () => {
+  const [isPending, startTransition] = useTransition();
   return (
     <button
-      onClick={() => login()}
+      onClick={() => {
+        startTransition(()=>{
+            login();
+        })
+      }}
       className="btn btn-lg bg-white text-black border-[#e5e5e5]"
     >
       <svg
@@ -38,6 +44,6 @@ const LoginBtn = () => {
       Login with Google
     </button>
   );
-}
+};
 
-export default LoginBtn
+export default LoginBtn;
