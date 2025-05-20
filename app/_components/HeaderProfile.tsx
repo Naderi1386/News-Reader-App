@@ -13,8 +13,10 @@ const HeaderProfile = async () => {
 
   return (
     <div className="avatar">
-      <div className="mask mask-squircle w-24">
+      <div className="mask mask-squircle w-24 relative">
         <Image
+          fill
+          className="object-cover"
           src={String(session.user?.image)}
           alt={`Avatar-${session.user?.name}`}
         />
