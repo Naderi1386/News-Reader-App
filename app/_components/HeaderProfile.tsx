@@ -12,14 +12,16 @@ const HeaderProfile = async () => {
     );
 
   return (
-    <div className="avatar">
-      <div className="mask mask-hexagon-2 w-10 relative">
-        <Image
-          fill
-          className="object-cover"
-          src={String(session.user?.image)}
-          alt={`Avatar-${session.user?.name}`}
-        />
+    <div className="tooltip tooltip-bottom" data-tip="hello">
+      <div className="avatar cursor-pointer">
+        <div className="mask mask-hexagon-2 w-10 relative">
+          <Image
+            fill
+            className="object-cover"
+            src={String(session.user?.image)}
+            alt={`Avatar-${session.user?.name}`}
+          />
+        </div>
       </div>
     </div>
   );
