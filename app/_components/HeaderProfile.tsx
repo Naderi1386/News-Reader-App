@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
+import LogoutBtn from "./LogoutBtn";
 
 const HeaderProfile = async () => {
   const session = await auth();
@@ -13,7 +14,7 @@ const HeaderProfile = async () => {
 
   return (
     <div className="flex items-center gap-5">
-      
+      <LogoutBtn />
 
       <div
         className="tooltip tooltip-bottom tooltip-success capitalize"
