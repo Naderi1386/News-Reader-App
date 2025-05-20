@@ -9,4 +9,5 @@ export const middleware = async (request: NextRequest) => {
   const isProtected = protectedRoutes.includes(pathname);
   if (isProtected && !session)
     return NextResponse.redirect(new URL("/login", request.url));
+  return NextResponse.next();
 };
