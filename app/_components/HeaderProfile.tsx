@@ -12,7 +12,10 @@ const HeaderProfile = async () => {
     );
 
   return (
-    <div className="tooltip tooltip-bottom" data-tip="hello">
+    <div
+      className="tooltip tooltip-bottom tooltip-success capitalize"
+      data-tip={`${session.user?.name}`}
+    >
       <div className="avatar cursor-pointer">
         <div className="mask mask-hexagon-2 w-10 relative">
           <Image
