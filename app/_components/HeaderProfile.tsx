@@ -1,8 +1,9 @@
+import { auth } from "@/auth";
 
-const HeaderProfile = () => {
-  return (
-    <div>HeaderProfile</div>
-  )
-}
+const HeaderProfile = async () => {
+  const session = await auth();
 
-export default HeaderProfile
+  return <div>HeaderProfile</div>;
+};
+
+export default HeaderProfile;
