@@ -1,5 +1,8 @@
 import NewsBigTitle from "../_components/NewsBigTitle";
-import { getSearchedNews } from "../_lib/services";
+
+import { Suspense } from "react";
+import Spinner from "../_components/Spinner";
+import NewsList from "../_components/NewsList";
 
 interface SearchParamsType {
   q: string;
@@ -17,13 +20,15 @@ export async function generateMetadata(props: PagePropsType) {
 }
 
 const page = async (props: PagePropsType) => {
-  const query = (await props.searchParams).q || "search";
-  const { articles } = await getSearchedNews(query);
+  const query = (await props.searchParams).q || "news";
 
   return (
     <div className="text-black px-4 md:px-18 py-18">
       <div className="space-y-10">
         <NewsBigTitle>News for {query}</NewsBigTitle>
+        <Suspense fallback={<Spinner />}>
+          <NewsList q={query} />
+        </Suspense>
       </div>
     </div>
   );

@@ -8,9 +8,10 @@ import {
 import NewsItem from "./NewsItem";
 
 interface NewsListPropsType {
-  category: string | undefined;
-  sources: string | undefined;
-  country: string | undefined;
+  category?: string | undefined;
+  sources?: string | undefined;
+  country?: string | undefined;
+  q?:string | undefined
 }
 const NewsList = memo(async function NewsList({
   category,
