@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { logout } from "../_lib/actions";
+import toast from "react-hot-toast";
 
 const LogoutBtn = () => {
   const [isPending, startTransition] = useTransition();
@@ -9,6 +10,7 @@ const LogoutBtn = () => {
   return (
     <button
       onClick={() => {
+        toast.error("You Loged out successfully");
         startTransition(() => {
           logout();
         });
