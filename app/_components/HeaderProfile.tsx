@@ -1,16 +1,11 @@
 import { auth } from "@/auth";
 import Image from "next/image";
-import Link from "next/link";
 import LogoutBtn from "./LogoutBtn";
+import LoginLink from "./LoginLink";
 
 const HeaderProfile = async () => {
   const session = await auth();
-  if (!session)
-    return (
-      <Link href={"/login"} className="btn btn-dash btn-success">
-        Log In
-      </Link>
-    );
+  if (!session) return <LoginLink />;
 
   return (
     <div className="flex items-center gap-5">
