@@ -4,7 +4,7 @@ import { useState } from "react";
 
 interface NewsPosterPropsType {
   img: string;
-  isRounded:boolean
+  isRounded: boolean;
 }
 
 const NewsPoster = ({ img, isRounded }: NewsPosterPropsType) => {
@@ -16,6 +16,7 @@ const NewsPoster = ({ img, isRounded }: NewsPosterPropsType) => {
       width={150}
       height={100}
       quality={90}
+      className={`${isRounded && "rounded-md"}`}
       src={src}
       alt="NEWS-POSTER"
       onError={() => setSrc("/images/empty-news.jpg")}
