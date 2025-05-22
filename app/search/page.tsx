@@ -1,8 +1,14 @@
-
-const page = () => {
-  return (
-    <div>page</div>
-  )
+interface SearchParamsType {
+  q: string;
 }
 
-export default page
+interface PagePropsType {
+  searchParams: Promise<SearchParamsType>;
+}
+
+const page = async (props: PagePropsType) => {
+  const query = (await props.searchParams).q || "search";
+  return <div>page</div>;
+};
+
+export default page;
