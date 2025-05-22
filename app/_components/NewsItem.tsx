@@ -13,7 +13,7 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
   const { title, urlToImage, description, publishedAt, content } = details;
   return (
     <li className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10 py-5">
-      <NewsPoster img={urlToImage} />
+      <NewsPoster isRounded={false} img={urlToImage} />
       <div className="grow">
         <NewsItemSmallTItle />
         <NewsItemDetailsModal

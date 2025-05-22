@@ -4,9 +4,10 @@ import { useState } from "react";
 
 interface NewsPosterPropsType {
   img: string;
+  isRounded:boolean
 }
 
-const NewsPoster = ({ img }: NewsPosterPropsType) => {
+const NewsPoster = ({ img, isRounded }: NewsPosterPropsType) => {
   const proxiedSrc = `/api/image-proxy?url=${encodeURIComponent(img)}`;
   const [src, setSrc] = useState(proxiedSrc);
 

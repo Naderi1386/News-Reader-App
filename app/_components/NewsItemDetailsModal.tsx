@@ -1,4 +1,7 @@
 "use client";
+
+import dynamic from "next/dynamic";
+const NewsPoster = dynamic(() => import("./NewsPoster"));
 interface NewsDetailsType {
   urlToImage: string;
   NewsTitle: string;
@@ -24,7 +27,9 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
       </span>
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box bg-custome-dark text-white">
-        
+          <div className="flex items-center justify-center">
+            <NewsPoster isRounded img={urlToImage} />
+          </div>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
