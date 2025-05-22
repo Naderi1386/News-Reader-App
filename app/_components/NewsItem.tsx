@@ -10,14 +10,14 @@ interface NewsItemPropsType {
   details: NewsType;
 }
 const NewsItem = ({ details }: NewsItemPropsType) => {
-  const { title, urlToImage, description, publishedAt, content } = details;
+  const { title, urlToImage, description, publishedAt, content, url } = details;
   return (
     <li className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10 py-5">
       <NewsPoster isRounded={false} img={urlToImage} />
       <div className="grow">
         <NewsItemSmallTItle />
         <NewsItemDetailsModal
-          details={{ content, NewsTitle: title, urlToImage }}
+          details={{ content, NewsTitle: title, urlToImage, url }}
           title={title}
         />
         <div className="flex items-center justify-between mt-3">

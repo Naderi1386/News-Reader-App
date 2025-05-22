@@ -2,10 +2,16 @@
 
 import dynamic from "next/dynamic";
 const NewsPoster = dynamic(() => import("./NewsPoster"));
+function cleanContent(text: string) {
+  return String(text || "")
+    .replace(/\s?\[\+\d+\s+chars\]$/, "...")
+    .replace(/…\s*$/, "");
+}
 interface NewsDetailsType {
   urlToImage: string;
   NewsTitle: string;
   content: string;
+  url: string;
 }
 interface NewsItemDetailsModal {
   title: string;
@@ -13,7 +19,8 @@ interface NewsItemDetailsModal {
 }
 
 const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
-  const { NewsTitle, content, urlToImage } = details;
+  const { NewsTitle, content, urlToImage, url } = details;
+
   return (
     <>
       <span
@@ -33,7 +40,8 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
           <h2 className="font-bold text-xl italic text-center mb-6">
             {NewsTitle}
           </h2>
-          <p>{content}</p>
+          <p className="mb-4">{cleanContent(content)}</p>
+          <a href={url} target="_blank" className="underline">See More</a>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
