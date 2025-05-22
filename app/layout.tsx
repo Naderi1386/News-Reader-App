@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   display: "swap",
@@ -31,7 +32,18 @@ export default function RootLayout({ children }: RootLayoutPropsType) {
       >
         <Header />
         <main className="bg-white">{children}</main>
-       <Footer />
+        <Footer />
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            className: "",
+            duration: 1000,
+          }}
+        />
       </body>
     </html>
   );
