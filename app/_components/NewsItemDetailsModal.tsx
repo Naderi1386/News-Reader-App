@@ -30,9 +30,10 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
           <div className="flex items-center justify-center mb-5">
             <NewsPoster isRounded img={urlToImage} />
           </div>
-          <h2 className="font-bold text-xl italic text-center">
+          <h2 className="font-bold text-xl italic text-center mb-6">
             {NewsTitle}
           </h2>
+          <p>{content}</p>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
