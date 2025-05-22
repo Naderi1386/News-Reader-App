@@ -40,12 +40,12 @@ const HeaderContent = ({ children }: HeaderContentPropsType) => {
         </AnimatePresence>
       )}
       <div className="flex items-center gap-4">
-        {children}
+        <div className="hidden sm:block">{children}</div>
         <HeaderSearchBtn
           isSearchOpen={isSearchOpen}
           onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
         />
-        {!isSearchOpen && <HeaderDrawer />}
+        {!isSearchOpen && <HeaderDrawer>{children}</HeaderDrawer>}
       </div>
     </div>
   );

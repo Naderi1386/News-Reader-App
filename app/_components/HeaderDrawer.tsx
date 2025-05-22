@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IoMenuOutline } from "react-icons/io5";
 import Logo from "./Logo";
+import { ReactNode } from "react";
 
 const items = [
   { text: "BBC News", href: "/news?sources=bbc-news" },
@@ -16,8 +17,11 @@ const items = [
   { text: "sports", href: "/news?category=sports" },
   { text: "technology", href: "/news?category=technology" },
 ];
+interface HeaderDrawerPropsType {
+  children: ReactNode;
+}
 
-const HeaderDrawer = () => {
+const HeaderDrawer = ({ children }: HeaderDrawerPropsType) => {
   return (
     <div className="drawer  md:hidden">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -39,6 +43,7 @@ const HeaderDrawer = () => {
           <div className="flex items-center justify-center py-6">
             <Logo type="header" />
           </div>
+          <div className="flex items-center justify-center py-8">{children}</div>
           <ul className="menu">
             {items.map((item) => (
               <li key={item.href}>
