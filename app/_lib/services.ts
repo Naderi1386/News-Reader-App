@@ -63,3 +63,20 @@ export const getNewsByCategory = async (category: string) => {
     throw new Error(`${category.toUpperCase()} News Could Not Be Loaded !`);
   }
 };
+
+export const getSearchedNews = async (q: string) => {
+  const url =
+    "https://newsapi.org/v2/everything?" +
+    `q=${q}&` +
+    `apiKey=${process.env.API_KEY}`;
+
+  const req = new Request(url);
+  try {
+    const request = await fetch(req);
+    const response = await request.json();
+    return response as ResponseType;
+  } catch (error) {
+    console.error(error);
+    throw new Error(`${q.toUpperCase()} Searched News Could Not Be Loaded !`);
+  }
+};
