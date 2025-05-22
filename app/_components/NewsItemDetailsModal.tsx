@@ -1,13 +1,16 @@
+interface NewsItemDetailsModal {
+  title: string;
+}
 
-const NewsItemDetailsModal = () => {
+const NewsItemDetailsModal = ({ title }: NewsItemDetailsModal) => {
   return (
     <>
-      <button
-        className="btn"
+      <span
+        className="text-black text-justify sm:text-left font-bold text-sm md:text-lg hover:underline block w-[75%]"
         onClick={() => document.getElementById("my_modal_2")?.showModal()}
       >
-        open modal
-      </button>
+        {title}
+      </span>
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Hello!</h3>
@@ -19,6 +22,6 @@ const NewsItemDetailsModal = () => {
       </dialog>
     </>
   );
-}
+};
 
-export default NewsItemDetailsModal
+export default NewsItemDetailsModal;
