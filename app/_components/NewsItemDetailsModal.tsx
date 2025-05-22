@@ -27,12 +27,12 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
         className="text-black text-justify cursor-pointer sm:text-left font-bold text-sm md:text-lg hover:underline block w-[75%]"
         onClick={() => {
           //@ts-expect-error type
-          document.getElementById("my_modal_2")?.showModal();
+          document.getElementById(NewsTitle)?.showModal();
         }}
       >
         {title}
       </span>
-      <dialog id="my_modal_2" className="modal">
+      <dialog id={NewsTitle} className="modal">
         <div className="modal-box bg-custome-dark text-white">
           <div className="flex items-center justify-center mb-5">
             <NewsPoster isRounded img={urlToImage} />
@@ -41,7 +41,9 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
             {NewsTitle}
           </h2>
           <p className="mb-4">{cleanContent(content)}</p>
-          <a href={url} target="_blank" className="underline">See More</a>
+          <a href={url} target="_blank" className="underline">
+            See More
+          </a>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
