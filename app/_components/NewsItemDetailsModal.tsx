@@ -1,9 +1,16 @@
 "use client";
+interface NewsDetailsType {
+  urlToImage: string;
+  NewsTitle: string;
+  content: string;
+}
 interface NewsItemDetailsModal {
   title: string;
+  details: NewsDetailsType;
 }
 
-const NewsItemDetailsModal = ({ title }: NewsItemDetailsModal) => {
+const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
+  const { NewsTitle, content, urlToImage } = details;
   return (
     <>
       <span
