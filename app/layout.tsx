@@ -41,7 +41,7 @@ export default function RootLayout({ children }: RootLayoutPropsType) {
           containerStyle={{}}
           toastOptions={{
             className: "",
-            duration: 1000,
+            duration: 2500,
           }}
         />
       </body>

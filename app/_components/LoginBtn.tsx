@@ -9,9 +9,9 @@ const LoginBtn = () => {
   return (
     <button
       onClick={() => {
+        toast.success("You Loged In To Your Google Account");
         startTransition(() => {
           login();
-          toast.success("You Loged In To Your Google Account Successfully ");
         });
       }}
       className="btn btn-lg bg-white text-black border-[#e5e5e5]"
