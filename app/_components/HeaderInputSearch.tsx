@@ -1,11 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
 const HeaderInputSearch = () => {
   const [inputSearch, setInputSearch] = useState("");
-  const handleSubmit = () => {};
+  const { push } = useRouter();
+  const handleSubmit = () => {
+    if (inputSearch) push(`/search?q=${inputSearch}`);
+  };
   return (
     <motion.form
       transition={{
