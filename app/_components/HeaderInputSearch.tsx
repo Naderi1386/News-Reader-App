@@ -4,11 +4,18 @@ import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
-const HeaderInputSearch = () => {
+interface HeaderInputSearchPropsType {
+  onClose: () => void;
+}
+
+const HeaderInputSearch = ({ onClose }: HeaderInputSearchPropsType) => {
   const [inputSearch, setInputSearch] = useState("");
   const { push } = useRouter();
   const handleSubmit = () => {
-    if (inputSearch) push(`/search?q=${inputSearch}`);
+    if (inputSearch) {
+      push(`/search?q=${inputSearch}`);
+      onClose()
+    };
   };
   return (
     <motion.form

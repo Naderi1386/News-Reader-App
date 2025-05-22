@@ -35,7 +35,7 @@ const HeaderContent = ({ children }: HeaderContentPropsType) => {
       ) : (
         <AnimatePresence>
           <div className="grow">
-            <HeaderInputSearch />
+            <HeaderInputSearch onClose={() => setIsSearchOpen(false)} />
           </div>
         </AnimatePresence>
       )}
