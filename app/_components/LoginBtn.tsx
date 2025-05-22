@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { login } from "../_lib/actions";
+import toast from "react-hot-toast";
 
 const LoginBtn = () => {
   const [isPending, startTransition] = useTransition();
@@ -10,6 +11,7 @@ const LoginBtn = () => {
       onClick={() => {
         startTransition(() => {
           login();
+          toast.success("You Loged In To Your Google Account Successfully ");
         });
       }}
       className="btn btn-lg bg-white text-black border-[#e5e5e5]"
