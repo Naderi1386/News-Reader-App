@@ -8,7 +8,10 @@ const NewsItemDetailsModal = ({ title }: NewsItemDetailsModal) => {
     <>
       <span
         className="text-black text-justify cursor-pointer sm:text-left font-bold text-sm md:text-lg hover:underline block w-[75%]"
-        onClick={() => document.getElementById("my_modal_2")?.showModal()}
+        onClick={() => {
+          //@ts-expect-error type
+          document.getElementById("my_modal_2")?.showModal();
+        }}
       >
         {title}
       </span>
