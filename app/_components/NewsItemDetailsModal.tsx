@@ -1,3 +1,4 @@
+"use client";
 interface NewsItemDetailsModal {
   title: string;
 }
@@ -6,7 +7,7 @@ const NewsItemDetailsModal = ({ title }: NewsItemDetailsModal) => {
   return (
     <>
       <span
-        className="text-black text-justify sm:text-left font-bold text-sm md:text-lg hover:underline block w-[75%]"
+        className="text-black text-justify cursor-pointer sm:text-left font-bold text-sm md:text-lg hover:underline block w-[75%]"
         onClick={() => document.getElementById("my_modal_2")?.showModal()}
       >
         {title}

@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import { NewsType } from "../_lib/services";
 import NewsItemDescription from "./NewsItemDescription";
-import NewsItemMainTitle from "./NewsItemMainTitle";
 import NewsItemPublishedDate from "./NewsItemPublishedDate";
 import NewsItemSmallTItle from "./NewsItemSmallTItle";
+const NewsItemDetailsModal = dynamic(() => import("./NewsItemDetailsModal"));
 const NewsPoster = dynamic(() => import("./NewsPoster"));
 
 interface NewsItemPropsType {
@@ -16,7 +16,7 @@ const NewsItem = ({ details }: NewsItemPropsType) => {
       <NewsPoster img={urlToImage} />
       <div className="grow">
         <NewsItemSmallTItle />
-        <NewsItemMainTitle title={title} />
+        <NewsItemDetailsModal title={title} />
         <div className="flex items-center justify-between mt-3">
           <NewsItemDescription description={description} />
           <NewsItemPublishedDate date={publishedAt} />
