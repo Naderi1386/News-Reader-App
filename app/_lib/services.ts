@@ -16,11 +16,12 @@ export interface ResponseType {
   totalResults: number;
   articles: NewsType[];
 }
-export const getBBCNews = async (page:string) => {
+export const getBBCNews = async (page: string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     "sources=bbc-news&" +
     `page=${page}&` +
+    "pageSize=10" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -33,11 +34,12 @@ export const getBBCNews = async (page:string) => {
   }
 };
 
-export const getUSNews = async (page:string) => {
+export const getUSNews = async (page: string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     "country=us&" +
     `page=${page}&` +
+    "pageSize=10" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -50,11 +52,12 @@ export const getUSNews = async (page:string) => {
   }
 };
 
-export const getNewsByCategory = async (category: string,page:string) => {
+export const getNewsByCategory = async (category: string, page: string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     `category=${category}&` +
-    `page=${page}&`+
+    `page=${page}&` +
+    "pageSize=10" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -72,6 +75,7 @@ export const getSearchedNews = async (q: string, page: string) => {
     "https://newsapi.org/v2/everything?" +
     `q=${q}&` +
     `page=${page}&` +
+    "pageSize=10" +
     `apiKey=${process.env.API_KEY}`;
 
   const req = new Request(url);

@@ -7,6 +7,7 @@ interface PaginationPropsType {
 }
 
 const Pagination = ({ totalNews }: PaginationPropsType) => {
+  console.log(totalNews)
   const searchParams = useSearchParams();
   const page = searchParams.get("page")?.toString();
   const pathname = usePathname();
