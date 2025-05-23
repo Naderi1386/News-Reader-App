@@ -1,10 +1,15 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const Pagination = () => {
   const searchParams = useSearchParams();
   const page = searchParams.get("page")?.toString();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+  const handleClick = (char: "+" | "-") => {
+    const params = new URLSearchParams(searchParams);
+  };
   return (
     <div className="flex items-center justify-center mt-6 ">
       <div className="join ">
