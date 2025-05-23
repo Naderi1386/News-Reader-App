@@ -8,6 +8,7 @@ interface SearchParamsType {
   sources?: string;
   country?: string;
   category?: string;
+  page?: string;
 }
 
 interface PagePropsType {
@@ -28,10 +29,11 @@ export const generateMetadata = async (props: PagePropsType) => {
 };
 
 const page = async (props: PagePropsType) => {
-  const [category, country, sources] = await Promise.all([
+  const [category, country, sources, page] = await Promise.all([
     (await props.searchParams).category,
     (await props.searchParams).country,
     (await props.searchParams).sources,
+    (await props.searchParams).page,
   ]);
 
   return (
@@ -41,10 +43,15 @@ const page = async (props: PagePropsType) => {
           {category ? category : country ? "United states" : "BBC"} News
         </NewsBigTitle>
         <Suspense
-          key={`${category}&${country}&${sources}`}
+          key={`${category}&${country}&${sources}&${page}`}
           fallback={<Spinner />}
         >
-          <NewsList category={category} country={country} sources={sources} />
+          <NewsList
+            page={page || "1"}
+            category={category}
+            country={country}
+            sources={sources}
+          />
         </Suspense>
       </div>
     </div>

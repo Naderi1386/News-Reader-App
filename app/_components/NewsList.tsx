@@ -7,6 +7,7 @@ import {
   NewsType,
 } from "../_lib/services";
 import NewsItem from "./NewsItem";
+import Pagination from "./Pagination";
 
 interface NewsListPropsType {
   category?: string | undefined;
@@ -25,24 +26,36 @@ const NewsList = memo(async function NewsList({
   let news: NewsType[] = [];
   let totalNews: number = 0;
   if (sources) {
-    const { articles, totalResults } = await getBBCNews();
+    const { articles, totalResults } = await getBBCNews(String(page));
     news = articles;
     totalNews = totalResults;
   }
   if (country) {
-    const { articles, totalResults } = await getUSNews();
+    const { articles, totalResults } = await getUSNews(String(page));
     news = articles;
     totalNews = totalResults;
   }
-  if (category) news = (await getNewsByCategory(category)).articles;
-  if (q) news = (await getSearchedNews(q, String(page))).articles;
+  if (category) {
+    const { articles, totalResults } = await getNewsByCategory(
+      category,
+      String(page)
+    );
+    news = articles;
+    totalNews = totalResults;
+  }
+  if (q) {
+    const { articles, totalResults } = await getSearchedNews(q, String(page));
+       news = articles;
+       totalNews = totalResults;
+  }
   return (
     <>
-    <ul className="divide-y divide-stone-300">
-      {news.map((details, index) => (
-        <NewsItem details={details} key={index + 1} />
-      ))}
-    </ul>
+      <ul className="divide-y divide-stone-300">
+        {news.map((details, index) => (
+          <NewsItem details={details} key={index + 1} />
+        ))}
+      </ul>
+      <Pagination totalNews={totalNews} />
     </>
   );
 });

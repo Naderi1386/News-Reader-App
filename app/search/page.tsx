@@ -3,7 +3,6 @@ import NewsBigTitle from "../_components/NewsBigTitle";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
 import NewsList from "../_components/NewsList";
-import Pagination from "../_components/Pagination";
 
 interface SearchParamsType {
   q: string;
@@ -32,7 +31,6 @@ const page = async (props: PagePropsType) => {
         <NewsBigTitle>News for {query}</NewsBigTitle>
         <Suspense fallback={<Spinner />} key={`${query}&${page}`}>
           <NewsList q={query} page={page} />
-          <Pagination />
         </Suspense>
       </div>
     </div>

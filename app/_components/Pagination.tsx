@@ -2,7 +2,11 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const Pagination = () => {
+interface PaginationPropsType {
+  totalNews: number;
+}
+
+const Pagination = ({ totalNews }: PaginationPropsType) => {
   const searchParams = useSearchParams();
   const page = searchParams.get("page")?.toString();
   const pathname = usePathname();

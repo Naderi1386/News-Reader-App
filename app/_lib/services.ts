@@ -16,10 +16,11 @@ export interface ResponseType {
   totalResults: number;
   articles: NewsType[];
 }
-export const getBBCNews = async () => {
+export const getBBCNews = async (page:string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     "sources=bbc-news&" +
+    `page=${page}&` +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -32,10 +33,11 @@ export const getBBCNews = async () => {
   }
 };
 
-export const getUSNews = async () => {
+export const getUSNews = async (page:string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     "country=us&" +
+    `page=${page}&` +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -48,10 +50,11 @@ export const getUSNews = async () => {
   }
 };
 
-export const getNewsByCategory = async (category: string) => {
+export const getNewsByCategory = async (category: string,page:string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     `category=${category}&` +
+    `page=${page}&`+
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
