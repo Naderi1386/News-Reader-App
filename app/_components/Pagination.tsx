@@ -7,7 +7,7 @@ interface PaginationPropsType {
 }
 
 const Pagination = ({ totalNews }: PaginationPropsType) => {
-  console.log(totalNews)
+  const lastPage = Math.ceil(totalNews / 10);
   const searchParams = useSearchParams();
   const page = searchParams.get("page")?.toString();
   const pathname = usePathname();
@@ -35,8 +35,9 @@ const Pagination = ({ totalNews }: PaginationPropsType) => {
           Page {page ? page : "1"}
         </button>
         <button
+          disabled={lastPage === (Number(page) || 1)}
           onClick={() => handleClick("+")}
-          className="join-item btn shadow-none bg-custome-green border-white"
+          className="join-item btn shadow-none bg-custome-green border-white "
         >
           »
         </button>
