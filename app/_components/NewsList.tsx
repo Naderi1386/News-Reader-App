@@ -13,18 +13,20 @@ interface NewsListPropsType {
   sources?: string | undefined;
   country?: string | undefined;
   q?: string | undefined;
+  page?: string;
 }
 const NewsList = memo(async function NewsList({
   category,
   country,
   sources,
   q,
+  page,
 }: NewsListPropsType) {
   let news: NewsType[] = [];
   if (sources) news = (await getBBCNews()).articles;
   if (country) news = (await getUSNews()).articles;
   if (category) news = (await getNewsByCategory(category)).articles;
-  if (q) news = (await getSearchedNews(q)).articles;
+  if (q) news = (await getSearchedNews(q, String(page))).articles;
   return (
     <ul className="divide-y divide-stone-300">
       {news.map((details, index) => (
