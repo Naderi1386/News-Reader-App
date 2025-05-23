@@ -11,7 +11,7 @@ export interface NewsType {
   publishedAt: string;
   content: string;
 }
-interface ResponseType {
+export interface ResponseType {
   status: string;
   totalResults: number;
   articles: NewsType[];
