@@ -40,10 +40,10 @@ const HeaderDrawer = ({ children }: HeaderDrawerPropsType) => {
           className="drawer-overlay"
         ></label>
         <div className="text-base-content min-h-full w-72 p-2 bg-custome-dark">
-          <div className="flex items-center justify-center py-6">
+          <div className="flex items-center justify-center py-4">
             <Logo type="header" />
           </div>
-          <div className="flex items-center justify-center py-8">{children}</div>
+          <div className="flex items-center justify-center py-4">{children}</div>
           <ul className="menu">
             {items.map((item) => (
               <li key={item.href}>
