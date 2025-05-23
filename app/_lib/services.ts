@@ -21,7 +21,7 @@ export const getBBCNews = async (page: string) => {
     "https://newsapi.org/v2/top-headlines?" +
     "sources=bbc-news&" +
     `page=${page}&` +
-    "pageSize=10" +
+    "pageSize=10&" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -39,7 +39,7 @@ export const getUSNews = async (page: string) => {
     "https://newsapi.org/v2/top-headlines?" +
     "country=us&" +
     `page=${page}&` +
-    "pageSize=10" +
+    "pageSize=10&" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -57,7 +57,7 @@ export const getNewsByCategory = async (category: string, page: string) => {
     "https://newsapi.org/v2/top-headlines?" +
     `category=${category}&` +
     `page=${page}&` +
-    "pageSize=10" +
+    "pageSize=10&" +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {
@@ -75,7 +75,7 @@ export const getSearchedNews = async (q: string, page: string) => {
     "https://newsapi.org/v2/everything?" +
     `q=${q}&` +
     `page=${page}&` +
-    "pageSize=10" +
+    "pageSize=11&" +
     `apiKey=${process.env.API_KEY}`;
 
   const req = new Request(url);
