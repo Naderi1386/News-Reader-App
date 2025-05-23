@@ -64,10 +64,11 @@ export const getNewsByCategory = async (category: string) => {
   }
 };
 
-export const getSearchedNews = async (q: string) => {
+export const getSearchedNews = async (q: string, page: string) => {
   const url =
     "https://newsapi.org/v2/everything?" +
     `q=${q}&` +
+    `page=${page}&` +
     `apiKey=${process.env.API_KEY}`;
 
   const req = new Request(url);
