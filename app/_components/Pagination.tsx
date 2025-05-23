@@ -9,6 +9,13 @@ const Pagination = () => {
   const { replace } = useRouter();
   const handleClick = (char: "+" | "-") => {
     const params = new URLSearchParams(searchParams);
+    const currentPage = Number(page) || 1;
+    if (char === "+") {
+      params.set("page", String(currentPage + 1));
+    } else if (char === "-" && currentPage > 1) {
+      params.set("page", String(currentPage - 1));
+    }
+    replace(`${pathname}?${params}`);
   };
   return (
     <div className="flex items-center justify-center mt-6 ">
