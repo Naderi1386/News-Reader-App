@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import { updateFavoritesRows } from "../_lib/actions";
 import { AddedFavoriteType } from "../_lib/services";
 
 interface AddToFavBtnPropsType {
@@ -7,7 +8,11 @@ interface AddToFavBtnPropsType {
 
 const AddToFavBtn = ({ favorite }: AddToFavBtnPropsType) => {
   return (
-    <button className="btn btn-circle">
+    <button
+    title="Add To Favorites"
+      onClick={() => updateFavoritesRows(favorite)}
+      className="btn btn-circle"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
