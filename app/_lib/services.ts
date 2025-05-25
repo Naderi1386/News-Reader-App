@@ -118,3 +118,11 @@ export const deleteFavorite = async (id: number) => {
     return error;
   }
 };
+
+export const addFavorite = async (fav: FavroiteType) => {
+  const { error } = await supabase.from("favorites").insert([fav]);
+  if (error) {
+    console.error(error);
+    return error;
+  }
+};
