@@ -1,8 +1,10 @@
+import FavoritesLink from "./FavoritesLink";
 import FooterList from "./FooterList";
 
 const FooterLists = () => {
   return (
     <div className="pr-34 flex items-start gap-28">
+      <FavoritesLink />
       <FooterList
         items={[
           { text: "BBC News", href: "/news?sources=bbc-news" },
