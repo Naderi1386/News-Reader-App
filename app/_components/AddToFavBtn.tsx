@@ -1,3 +1,4 @@
+"use client"
 import { AddedFavoriteType } from "../_lib/services";
 
 interface AddToFavBtnPropsType {
