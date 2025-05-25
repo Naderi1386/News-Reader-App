@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import AddToFavBtn from "./AddToFavBtn";
 const NewsPoster = dynamic(() => import("./NewsPoster"));
 function cleanContent(text: string) {
   return String(text || "")
@@ -37,9 +38,12 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
           <div className="flex items-center justify-center mb-5">
             <NewsPoster isRounded img={urlToImage} />
           </div>
-          <h2 className="font-bold text-xl italic text-center mb-6">
-            {NewsTitle}
-          </h2>
+          <div className="mb-6 flex flex-col items-center gap-3">
+            <h2 className="font-bold text-xl italic text-center ">
+              {NewsTitle}
+            </h2>
+            <AddToFavBtn  />
+          </div>
           <p className="mb-4">{cleanContent(content)}</p>
           <a href={url} target="_blank" className="underline">
             See More
