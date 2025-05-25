@@ -91,7 +91,7 @@ export const getSearchedNews = async (q: string, page: string) => {
   }
 };
 
-export interface FavroiteType {
+export interface FavoriteType {
   id: number;
   title: string;
   description: string;
@@ -108,7 +108,7 @@ export const getAllFavorites = async () => {
     console.error(error);
     return error;
   }
-  return favorites as FavroiteType[];
+  return favorites as FavoriteType[];
 };
 
 export const deleteFavorite = async (id: number) => {
@@ -119,7 +119,15 @@ export const deleteFavorite = async (id: number) => {
   }
 };
 
-export const addFavorite = async (fav: FavroiteType) => {
+export interface AddedFavoriteType {
+  title: string;
+  description: string;
+  content: string;
+  img: string;
+  link: string;
+}
+
+export const addFavorite = async (fav: AddedFavoriteType) => {
   const { error } = await supabase.from("favorites").insert([fav]);
   if (error) {
     console.error(error);
