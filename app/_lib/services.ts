@@ -1,3 +1,5 @@
+import { supabase } from "./supabase";
+
 export interface NewsType {
   source: {
     id: string;
@@ -97,3 +99,14 @@ export interface FavroiteType {
   img: string;
   link: string;
 }
+
+export const getAllFavorites = async () => {
+  const { data: favorites, error } = await supabase
+    .from("favorites")
+    .select("*");
+  if (error) {
+    console.error(error);
+    return error;
+  }
+  return favorites as FavroiteType[];
+};
