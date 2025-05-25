@@ -2,25 +2,21 @@
 
 import dynamic from "next/dynamic";
 import AddToFavBtn from "./AddToFavBtn";
+import { NewsType } from "../_lib/services";
 const NewsPoster = dynamic(() => import("./NewsPoster"));
 function cleanContent(text: string) {
   return String(text || "")
     .replace(/\s?\[\+\d+\s+chars\]$/, "...")
     .replace(/…\s*$/, "");
 }
-interface NewsDetailsType {
-  urlToImage: string;
-  NewsTitle: string;
-  content: string;
-  url: string;
-}
+
 interface NewsItemDetailsModal {
   title: string;
-  details: NewsDetailsType;
+  details: NewsType;
 }
 
 const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
-  const { NewsTitle, content, urlToImage, url } = details;
+  const { title: NewsTitle, content, urlToImage, url, description } = details;
 
   return (
     <>
@@ -42,7 +38,15 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
             <h2 className="font-bold text-xl italic text-center ">
               {NewsTitle}
             </h2>
-            <AddToFavBtn  />
+            <AddToFavBtn
+              favorite={{
+                content,
+                description,
+                img: urlToImage,
+                link: url,
+                title: NewsTitle,
+              }}
+            />
           </div>
           <p className="mb-4">{cleanContent(content)}</p>
           <a href={url} target="_blank" className="underline">
