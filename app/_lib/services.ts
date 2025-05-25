@@ -110,3 +110,11 @@ export const getAllFavorites = async () => {
   }
   return favorites as FavroiteType[];
 };
+
+export const deleteFavorite = async (id: number) => {
+  const { error } = await supabase.from("favorites").delete().eq("id", id);
+  if (error) {
+    console.error(error);
+    return error;
+  }
+};
