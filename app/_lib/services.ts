@@ -88,3 +88,12 @@ export const getSearchedNews = async (q: string, page: string) => {
     throw new Error(`${q.toUpperCase()} Searched News Could Not Be Loaded !`);
   }
 };
+
+export interface FavroiteType {
+  id: number;
+  title: string;
+  description: string;
+  content: string;
+  img: string;
+  link: string;
+}

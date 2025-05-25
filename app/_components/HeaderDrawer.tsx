@@ -43,7 +43,9 @@ const HeaderDrawer = ({ children }: HeaderDrawerPropsType) => {
           <div className="flex items-center justify-center py-4">
             <Logo type="header" />
           </div>
-          <div className="flex items-center justify-center py-4">{children}</div>
+          <div className="flex items-center justify-center py-4">
+            {children}
+          </div>
           <ul className="menu">
             {items.map((item) => (
               <li key={item.href}>
