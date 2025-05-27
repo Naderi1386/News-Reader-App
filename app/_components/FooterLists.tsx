@@ -3,7 +3,7 @@ import FooterList from "./FooterList";
 
 const FooterLists = () => {
   return (
-    <div className="pr-34 flex items-start gap-28">
+    <div className="pr-34 flex items-start gap-12 sm:gap-28 flex-wrap">
       <FavoritesLink />
       <FooterList
         items={[
