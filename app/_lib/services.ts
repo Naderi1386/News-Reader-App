@@ -106,7 +106,6 @@ export const getAllFavorites = async () => {
     .select("*");
   if (error) {
     console.error(error);
-    return error;
   }
   return favorites as FavoriteType[];
 };
