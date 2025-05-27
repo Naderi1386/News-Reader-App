@@ -5,7 +5,7 @@ const FavoritesTitleSection = async () => {
   const session = await auth();
   if (!session) return null;
   return (
-    <div className="bg-custome-green text-white">
+    <div className="bg-custome-green text-white px-4 md:px-18 py-18">
       <div className="flex items-center gap-8">
         <FavoritesAvatar url={String(session.user?.image)} />
       </div>

@@ -7,7 +7,7 @@ interface FavoritesAvatarPropsType {
 const FavoritesAvatar = ({ url }: FavoritesAvatarPropsType) => {
   return (
     <div className="avatar">
-      <div className="mask mask-squircle w-24 relative">
+      <div className="mask mask-squircle w-16 relative">
         <Image fill className="object-cover" alt="Avatar-User" src={url} />
       </div>
     </div>
