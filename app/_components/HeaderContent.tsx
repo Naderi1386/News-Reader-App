@@ -4,6 +4,7 @@ import HeaderSearchBtn from "./HeaderSearchBtn";
 import Navigation from "./Navigation";
 import { AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
+import SpinnerMini from "./SpinnerMini";
 const HeaderLogoWrraper = dynamic(() => import("./HeaderLogoWrraper"), {
   ssr: false,
 });
@@ -11,7 +12,10 @@ const HeaderInputSearch = dynamic(() => import("./HeaderInputSearch"), {
   ssr: false,
 });
 const Logo = dynamic(() => import("./Logo"), { ssr: false });
-const HeaderDrawer = dynamic(() => import("./HeaderDrawer"), { ssr: false });
+const HeaderDrawer = dynamic(() => import("./HeaderDrawer"), {
+  ssr: false,
+  loading: () => <SpinnerMini />,
+});
 
 interface HeaderContentPropsType {
   children: ReactNode;
