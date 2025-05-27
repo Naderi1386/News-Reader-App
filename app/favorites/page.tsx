@@ -1,6 +1,8 @@
 import { auth } from "@/auth";
 import FavoritesContent from "../_components/FavoritesContent";
 import FavoritesTitleSection from "../_components/FavoritesTItleSection";
+import { Suspense } from "react";
+import Spinner from "../_components/Spinner";
 
 export const generateMetadata = async () => {
   const session = await auth();
@@ -19,7 +21,15 @@ const page = () => {
     <div className="text-black">
       <div>
         <FavoritesTitleSection />
-        <FavoritesContent />
+        <Suspense
+          fallback={
+            <div className="py-18">
+              <Spinner />
+            </div>
+          }
+        >
+          <FavoritesContent />
+        </Suspense>
       </div>
     </div>
   );
