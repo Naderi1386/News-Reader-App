@@ -7,7 +7,7 @@ interface FavoritesListPropsType {
 
 const FavoritesList = ({ favorites }: FavoritesListPropsType) => {
   return (
-    <ul>
+    <ul className="flex flex-wrap gap-8 justify-between">
       {favorites.map((favorite) => (
         <FavoriteItem favorite={favorite} key={favorite.id} />
       ))}

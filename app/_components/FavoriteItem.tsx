@@ -10,8 +10,8 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
   const { title, img } = favorite;
 
   return (
-    <li>
-      <div className="card bg-base-100 image-full w-96 shadow-sm">
+    <li className="w-[22%]">
+      <div className="card bg-base-100 image-full w-full shadow-sm">
         <figure className="relative w-full">
           <NewsPoster img={img} isRounded={false} isFull />
         </figure>
