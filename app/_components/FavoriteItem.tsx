@@ -7,8 +7,8 @@ interface FavoriteItemPropsType {
 }
 
 const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
-  const { title, img } = favorite;
-
+  const { title, img, description } = favorite;
+  const shortTitle = title.split(" ").slice(0, 10).join(" ");
   return (
     <li className="w-[22%]">
       <div className="card bg-base-100 image-full w-full shadow-sm">
@@ -16,7 +16,7 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
           <NewsPoster img={img} isRounded={false} isFull />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Card Title</h2>
+          <h2 className="card-title text-sm">{shortTitle}...</h2>
           <p>
             A card component has a figure, a body part, and inside body there
             are title and actions parts
