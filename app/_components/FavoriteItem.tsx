@@ -9,6 +9,7 @@ interface FavoriteItemPropsType {
 const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
   const { title, img, description } = favorite;
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
+  const shortDescription = description ?description.split(" ").slice(0, 12).join(" ") : "Nothing"
   return (
     <li className="w-[22%]">
       <div className="card bg-base-100 image-full w-full shadow-sm">
@@ -17,10 +18,7 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title text-sm">{shortTitle}...</h2>
-          <p>
-            A card component has a figure, a body part, and inside body there
-            are title and actions parts
-          </p>
+          <p>{shortDescription}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Buy Now</button>
           </div>
