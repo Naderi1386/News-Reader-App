@@ -13,7 +13,7 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
     : "......";
   return (
     <li className="w-full md:w-[30%] lg:w-[22%] h-[300px]">
-      <div className="card bg-base-100 image-full w-full h-full  shadow-sm">
+      <div className="card bg-base-100 image-full w-full h-full shadow-sm">
         <figure className="relative w-full">
           <NewsPoster img={img} isRounded={false} isFull />
         </figure>
@@ -24,7 +24,7 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
             <a
               target="_blank"
               href={link}
-              className="btn border-none outline-none bg-custome-green"
+              className="btn btn-md border-none outline-none bg-custome-green"
             >
               See More
             </a>

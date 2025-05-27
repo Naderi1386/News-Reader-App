@@ -8,7 +8,7 @@ const HeaderProfile = async () => {
   if (!session) return <LoginLink />;
 
   return (
-    <div className="flex items-center gap-5">
+    <div className="flex items-center gap-5 mr-8">
       <LogoutBtn />
 
       <div
