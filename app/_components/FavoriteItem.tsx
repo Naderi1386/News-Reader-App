@@ -10,10 +10,10 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
   const shortDescription = description
     ? description.split(" ").slice(0, 12).join(" ")
-    : "Nothing";
+    : "......";
   return (
     <li className="w-[22%]">
-      <div className="card bg-base-100 image-full w-full shadow-sm">
+      <div className="card bg-base-100 image-full w-full  shadow-sm">
         <figure className="relative w-full">
           <NewsPoster img={img} isRounded={false} isFull />
         </figure>
@@ -21,7 +21,11 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
           <h2 className="card-title text-sm">{shortTitle}...</h2>
           <p>{shortDescription}</p>
           <div className="card-actions justify-end">
-            <a target="_blank" href={link} className="btn bg-custome-green">
+            <a
+              target="_blank"
+              href={link}
+              className="btn border-none outline-none bg-custome-green"
+            >
               See More
             </a>
           </div>
