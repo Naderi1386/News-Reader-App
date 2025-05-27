@@ -12,14 +12,14 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
     ? description.split(" ").slice(0, 12).join(" ")
     : "......";
   return (
-    <li className="w-[22%]">
-      <div className="card bg-base-100 image-full w-full  shadow-sm">
+    <li className="w-full md:w-[30%] lg:w-[22%] h-[300px]">
+      <div className="card bg-base-100 image-full w-full h-full  shadow-sm">
         <figure className="relative w-full">
           <NewsPoster img={img} isRounded={false} isFull />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-sm">{shortTitle}...</h2>
-          <p>{shortDescription}</p>
+          <p>{shortDescription}...</p>
           <div className="card-actions justify-end">
             <a
               target="_blank"
