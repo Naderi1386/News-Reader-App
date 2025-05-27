@@ -33,13 +33,13 @@ const HeaderDrawer = ({ children }: HeaderDrawerPropsType) => {
           <IoMenuOutline size={20} />
         </label>
       </div>
-      <div className="drawer-side z-[100000]">
+      <div className="drawer-side z-[100000] ">
         <label
           htmlFor="my-drawer"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="text-base-content min-h-full w-72 p-2 bg-custome-dark">
+        <div className="text-base-content min-h-full w-72 p-2 bg-custome-dark border-t border-r border-b border-solid border-custome-green">
           <div className="flex items-center justify-center py-4">
             <Logo type="header" />
           </div>
