@@ -8,8 +8,8 @@ interface FavoritesListPropsType {
 const FavoritesList = ({ favorites }: FavoritesListPropsType) => {
   return (
     <ul>
-      {favorites.map((favorite, index) => (
-        <FavoriteItem favorite={favorite} key={index + 1} />
+      {favorites.map((favorite) => (
+        <FavoriteItem favorite={favorite} key={favorite.id} />
       ))}
     </ul>
   );
