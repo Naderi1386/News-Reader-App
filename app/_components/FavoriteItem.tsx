@@ -13,7 +13,7 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
     <li>
       <div className="card bg-base-100 image-full w-96 shadow-sm">
         <figure className="relative w-full">
-          <NewsPoster img={img} isRounded={false} />
+          <NewsPoster img={img} isRounded={false} isFull />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Card Title</h2>
