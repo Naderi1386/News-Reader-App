@@ -20,7 +20,11 @@ const FavoritesList = ({ favorites }: FavoritesListPropsType) => {
   return (
     <ul className="flex flex-wrap gap-12 justify-between items-stretch">
       {optimisticFavorites.map((favorite) => (
-        <FavoriteItem favorite={favorite} key={favorite.id} />
+        <FavoriteItem
+          onDeleteFavoriteItem={onDeleteFavoriteItem}
+          favorite={favorite}
+          key={favorite.id}
+        />
       ))}
     </ul>
   );

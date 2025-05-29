@@ -2,16 +2,18 @@
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { MdArrowRightAlt } from "react-icons/md";
 
-import { removeFav } from "../_lib/actions";
-
 interface RemoveFavBtnPropsType {
   id: number;
+  onDeleteFavoriteItem: (id: number) => void;
 }
-const RemoveFavBtn = ({ id }: RemoveFavBtnPropsType) => {
+const RemoveFavBtn = ({ id, onDeleteFavoriteItem }: RemoveFavBtnPropsType) => {
   return (
     <div className="flex items-end justify-between py-1">
       <MdArrowRightAlt size={22} />
-      <button onClick={() => removeFav(id)} className="cursor-pointer">
+      <button
+        onClick={() => onDeleteFavoriteItem(id)}
+        className="cursor-pointer"
+      >
         <MdOutlineDeleteOutline size={22} />
       </button>
     </div>

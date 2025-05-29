@@ -4,9 +4,10 @@ import RemoveFavBtn from "./RemoveFavBtn";
 
 interface FavoriteItemPropsType {
   favorite: FavoriteType;
+  onDeleteFavoriteItem: (id:number) => void;
 }
 
-const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
+const FavoriteItem = ({ favorite,onDeleteFavoriteItem }: FavoriteItemPropsType) => {
   const { title, img, description, link, id } = favorite;
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
   const shortDescription = description
@@ -14,7 +15,7 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
     : "......";
   return (
     <li className="w-full md:w-[30%] lg:w-[22%] h-[300px]">
-      <RemoveFavBtn id={id} />
+      <RemoveFavBtn onDeleteFavoriteItem={onDeleteFavoriteItem} id={id} />
       <div className="card bg-base-100 image-full w-full h-full shadow-sm">
         <figure className="relative w-full">
           <NewsPoster img={img} isRounded={false} isFull />
