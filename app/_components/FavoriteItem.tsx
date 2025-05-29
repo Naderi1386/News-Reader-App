@@ -1,7 +1,6 @@
 import { FavoriteType } from "../_lib/services";
 import NewsPoster from "./NewsPoster";
 import RemoveFavBtn from "./RemoveFavBtn";
-import { AnimatePresence } from "framer-motion";
 
 interface FavoriteItemPropsType {
   favorite: FavoriteType;
