@@ -1,4 +1,5 @@
-import { useOptimistic } from "react";
+"use client";
+import { useOptimistic, useTransition } from "react";
 import { FavoriteType } from "../_lib/services";
 import FavoriteItem from "./FavoriteItem";
 import { removeFav } from "../_lib/actions";
@@ -10,11 +11,15 @@ interface FavoritesListPropsType {
 const FavoritesList = ({ favorites }: FavoritesListPropsType) => {
   const [optimisticFavorites, deleteFav] = useOptimistic(
     favorites,
-    (fav, id: number) => fav.filter((fav) => fav.id !== id)
+    (fav, id: number) => {
+      return fav.filter((fav) => fav.id !== id);
+    }
   );
+  const transition = useTransition();
 
   const onDeleteFavoriteItem = (id: number) => {
-    deleteFav(id);
+    transition[1](() => deleteFav(id));
+
     removeFav(id);
   };
   return (
