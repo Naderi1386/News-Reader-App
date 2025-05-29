@@ -22,7 +22,7 @@ const FavoritesList = ({ favorites }: FavoritesListPropsType) => {
 
     removeFav(id);
   };
-  if (!optimisticFavorites.length) return null;
+
   return (
     <ul className="flex flex-wrap gap-12 justify-between items-stretch">
       {optimisticFavorites.map((favorite) => (
