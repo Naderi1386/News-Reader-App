@@ -17,7 +17,11 @@ const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
     ? description.split(" ").slice(0, 12).join(" ")
     : "......";
   return (
-    <li className="w-full md:w-[30%] lg:w-[22%] h-[300px]">
+    <li
+      onMouseEnter={() => setIsShow(true)}
+      onMouseLeave={() => setIsShow(false)}
+      className="w-full md:w-[30%] lg:w-[22%] h-[300px]"
+    >
       <AnimatePresence mode="wait">
         {isShow && <RemoveFavBtn id={id} />}
       </AnimatePresence>
