@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { FavoriteType } from "../_lib/services";
 import NewsPoster from "./NewsPoster";
 import RemoveFavBtn from "./RemoveFavBtn";
@@ -7,6 +9,7 @@ interface FavoriteItemPropsType {
 }
 
 const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
+  const [isShow, setIsShow] = useState(false);
   const { title, img, description, link, id } = favorite;
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
   const shortDescription = description
