@@ -45,8 +45,12 @@ const NewsList = memo(async function NewsList({
   }
   if (q) {
     const { articles, totalResults } = await getSearchedNews(q, String(page));
-       news = articles;
-       totalNews = totalResults;
+    news = articles;
+    totalNews = totalResults;
+  } else {
+    const { articles, totalResults } = await getBBCNews(String(page));
+    news = articles;
+    totalNews = totalResults;
   }
   return (
     <>
