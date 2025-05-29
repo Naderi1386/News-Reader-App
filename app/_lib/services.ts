@@ -135,11 +135,14 @@ export const addFavorite = async (fav: AddedFavoriteType) => {
 };
 
 export const getFavoritesNewsLength = async () => {
-  const { data: length, error } = await supabase
+  const { count, error } = await supabase
     .from("favorites")
     .select("*", { head: true, count: "exact" });
+
   if (error) {
     console.error(error);
+    return 0;
   }
-  return Number(length);
+
+  return count ?? 0;
 };

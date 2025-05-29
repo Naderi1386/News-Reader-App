@@ -3,6 +3,7 @@ import FavoritesContent from "../_components/FavoritesContent";
 import FavoritesTitleSection from "../_components/FavoritesTItleSection";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
+import FavoritesLength from "../_components/FavoritesLength";
 
 export const generateMetadata = async () => {
   const session = await auth();
@@ -30,6 +31,7 @@ const page = () => {
         >
           <FavoritesContent />
         </Suspense>
+        <FavoritesLength />
       </div>
     </div>
   );
