@@ -6,7 +6,7 @@ interface FavoriteItemPropsType {
 }
 
 const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
-  const { title, img, description, link } = favorite;
+  const { title, img, description, link,id } = favorite;
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
   const shortDescription = description
     ? description.split(" ").slice(0, 12).join(" ")
