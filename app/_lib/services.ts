@@ -133,3 +133,13 @@ export const addFavorite = async (fav: AddedFavoriteType) => {
     return error;
   }
 };
+
+export const getFavoritesNewsLength = async () => {
+  const { data: length, error } = await supabase
+    .from("favorites")
+    .select("*", { head: true, count: "exact" });
+  if (error) {
+    console.error(error);
+  }
+  return Number(length);
+};
