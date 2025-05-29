@@ -1,18 +1,20 @@
 import { FavoriteType } from "../_lib/services";
 import NewsPoster from "./NewsPoster";
+import RemoveFavBtn from "./RemoveFavBtn";
 
 interface FavoriteItemPropsType {
   favorite: FavoriteType;
 }
 
 const FavoriteItem = ({ favorite }: FavoriteItemPropsType) => {
-  const { title, img, description, link,id } = favorite;
+  const { title, img, description, link, id } = favorite;
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
   const shortDescription = description
     ? description.split(" ").slice(0, 12).join(" ")
     : "......";
   return (
     <li className="w-full md:w-[30%] lg:w-[22%] h-[300px]">
+      <RemoveFavBtn id={id} />
       <div className="card bg-base-100 image-full w-full h-full shadow-sm">
         <figure className="relative w-full">
           <NewsPoster img={img} isRounded={false} isFull />
