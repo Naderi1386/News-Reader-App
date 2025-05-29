@@ -1,6 +1,7 @@
 import { useOptimistic } from "react";
 import { FavoriteType } from "../_lib/services";
 import FavoriteItem from "./FavoriteItem";
+import { removeFav } from "../_lib/actions";
 
 interface FavoritesListPropsType {
   favorites: FavoriteType[];
@@ -12,6 +13,10 @@ const FavoritesList = ({ favorites }: FavoritesListPropsType) => {
     (fav, id: number) => fav.filter((fav) => fav.id !== id)
   );
 
+  const onDeleteFavoriteItem = (id: number) => {
+    deleteFav(id);
+    removeFav(id);
+  };
   return (
     <ul className="flex flex-wrap gap-12 justify-between items-stretch">
       {optimisticFavorites.map((favorite) => (
