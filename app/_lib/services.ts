@@ -36,12 +36,12 @@ export const getBBCNews = async (page: string) => {
   }
 };
 
-export const getUSNews = async (page: string) => {
+export const getUSNews = async (page: string,pageSize:string) => {
   const url =
     "https://newsapi.org/v2/top-headlines?" +
     "country=us&" +
     `page=${page}&` +
-    "pageSize=10&" +
+    `pageSize=${pageSize}&` +
     `apiKey=${process.env.API_KEY}`;
   const req = new Request(url);
   try {

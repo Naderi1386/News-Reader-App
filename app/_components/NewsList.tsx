@@ -32,7 +32,7 @@ const NewsList = memo(async function NewsList({
     totalNews = totalResults;
   }
   if (country) {
-    const { articles, totalResults } = await getUSNews(String(page));
+    const { articles, totalResults } = await getUSNews(String(page), "10");
     news = articles;
     totalNews = totalResults;
   }
