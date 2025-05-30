@@ -1,8 +1,9 @@
 "use client";
 import { useOptimistic, useTransition } from "react";
 import { FavoriteType } from "../_lib/services";
-import FavoriteItem from "./FavoriteItem";
+const FavoriteItem = dynamic(() => import("./FavoriteItem"));
 import { removeFav } from "../_lib/actions";
+import dynamic from "next/dynamic";
 
 interface FavoritesListPropsType {
   favorites: FavoriteType[];

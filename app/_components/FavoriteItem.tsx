@@ -1,13 +1,17 @@
+import dynamic from "next/dynamic";
 import { FavoriteType } from "../_lib/services";
-import NewsPoster from "./NewsPoster";
-import RemoveFavBtn from "./RemoveFavBtn";
+const NewsPoster = dynamic(() => import("./NewsPoster"));
+const RemoveFavBtn = dynamic(() => import("./RemoveFavBtn"));
 
 interface FavoriteItemPropsType {
   favorite: FavoriteType;
-  onDeleteFavoriteItem: (id:number) => void;
+  onDeleteFavoriteItem: (id: number) => void;
 }
 
-const FavoriteItem = ({ favorite,onDeleteFavoriteItem }: FavoriteItemPropsType) => {
+const FavoriteItem = ({
+  favorite,
+  onDeleteFavoriteItem,
+}: FavoriteItemPropsType) => {
   const { title, img, description, link, id } = favorite;
   const shortTitle = title.split(" ").slice(0, 10).join(" ");
   const shortDescription = description
