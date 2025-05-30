@@ -6,8 +6,9 @@ import {
   getUSNews,
   NewsType,
 } from "../_lib/services";
-import NewsItem from "./NewsItem";
-import Pagination from "./Pagination";
+const NewsItem = dynamic(() => import("./NewsItem"));
+const Pagination = dynamic(() => import("./Pagination"));
+import dynamic from "next/dynamic";
 
 interface NewsListPropsType {
   category?: string | undefined;

@@ -10,7 +10,9 @@ const FavoritesTitleSection = async () => {
         <FavoritesAvatar url={String(session.user?.image)} />
         <h1 className="text-2xl font-semibold ">
           Favorites news of{" "}
-          <span className="font-bold text-3xl capitalize">{session.user?.name}</span>
+          <span className="font-bold text-3xl capitalize">
+            {session.user?.name}
+          </span>
         </h1>
       </div>
     </div>
