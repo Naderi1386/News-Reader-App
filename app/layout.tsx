@@ -42,7 +42,9 @@ export default function RootLayout({ children }: RootLayoutPropsType) {
           toastOptions={{
             className: "",
             duration: 2500,
+            
           }}
+          
         />
       </body>
     </html>

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { updateFavoritesRows } from "../_lib/actions";
 import { AddedFavoriteType } from "../_lib/services";
+import toast from "react-hot-toast";
 
 interface AddToFavBtnPropsType {
   favorite: AddedFavoriteType;
@@ -36,7 +37,12 @@ const AddToFavBtn = ({ favorite, isAdded }: AddToFavBtnPropsType) => {
   return (
     <button
       title="Add To Favorites"
-      onClick={() => updateFavoritesRows(favorite)}
+      onClick={() => {
+        updateFavoritesRows(favorite);
+        setTimeout(() => {
+          toast.success("New News Got Added To Your Favorites");
+        }, 2000);
+      }}
       className="btn btn-circle"
     >
       <svg
