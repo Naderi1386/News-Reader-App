@@ -39,6 +39,7 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
               {NewsTitle}
             </h2>
             <AddToFavBtn
+            isAdded={false}
               favorite={{
                 content,
                 description,

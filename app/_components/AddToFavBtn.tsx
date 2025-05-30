@@ -4,6 +4,7 @@ import { AddedFavoriteType } from "../_lib/services";
 
 interface AddToFavBtnPropsType {
   favorite: AddedFavoriteType;
+  isAdded:boolean
 }
 
 const AddToFavBtn = ({ favorite }: AddToFavBtnPropsType) => {
