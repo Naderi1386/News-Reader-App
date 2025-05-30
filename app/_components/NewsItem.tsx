@@ -11,7 +11,8 @@ interface NewsItemPropsType {
 }
 const NewsItem = async ({ details }: NewsItemPropsType) => {
   const { title, urlToImage, description, publishedAt, source } = details;
-  const singleFav = await getSingleFavorite(Number(source.id));
+  const singleFav = await getSingleFavorite(source.id);
+
   const isAdded = singleFav ? true : false;
   return (
     <li className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10 py-5">

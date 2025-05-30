@@ -147,15 +147,15 @@ export const getFavoritesNewsLength = async () => {
   return count ?? 0;
 };
 
-export const getSingleFavorite = async (id: number) => {
+export const getSingleFavorite = async (title: string) => {
   const { data: favorite, error } = await supabase
     .from("favorites")
     .select("*")
-    .eq("id", id)
+    .eq("title", title)
     .single();
 
   if (error || !favorite) {
-    console.error(error);
+    console.log(error);
     return null;
   }
   return favorite as FavoriteType;
