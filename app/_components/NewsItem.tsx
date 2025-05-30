@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { NewsType } from "../_lib/services";
+import { getSingleFavorite, NewsType } from "../_lib/services";
 import NewsItemDescription from "./NewsItemDescription";
 import NewsItemPublishedDate from "./NewsItemPublishedDate";
 import NewsItemSmallTItle from "./NewsItemSmallTItle";
@@ -9,8 +9,10 @@ const NewsPoster = dynamic(() => import("./NewsPoster"));
 interface NewsItemPropsType {
   details: NewsType;
 }
-const NewsItem = ({ details }: NewsItemPropsType) => {
-  const { title, urlToImage, description, publishedAt } = details;
+const NewsItem = async ({ details }: NewsItemPropsType) => {
+  const { title, urlToImage, description, publishedAt, source } = details;
+  const singleFav = await getSingleFavorite(Number(source.id));
+  const isAdded = singleFav ? true : false;
   return (
     <li className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10 py-5">
       <NewsPoster isRounded={false} img={urlToImage} />
