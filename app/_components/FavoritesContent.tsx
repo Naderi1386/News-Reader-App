@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
 import { getAllFavorites } from "../_lib/services";
 import EmptyContent from "./EmptyContent";
-import FavoritesList from "./FavoritesList";
+const FavoritesList = dynamic(() => import("./FavoritesList"));
 
 const FavoritesContent = async () => {
   const favorites = await getAllFavorites();
