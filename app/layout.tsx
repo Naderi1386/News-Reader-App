@@ -42,8 +42,11 @@ export default function RootLayout({ children }: RootLayoutPropsType) {
           toastOptions={{
             className: "",
             duration: 2500,
-            
+            style:{
+              marginTop:100
+            }
           }}
+        
           
         />
       </body>

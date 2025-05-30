@@ -40,7 +40,7 @@ const AddToFavBtn = ({ favorite, isAdded }: AddToFavBtnPropsType) => {
       onClick={() => {
         updateFavoritesRows(favorite);
         setTimeout(() => {
-          toast.success("New News Got Added To Your Favorites");
+          toast.success("New Got Added To Your Favorites");
         }, 2000);
       }}
       className="btn btn-circle"
