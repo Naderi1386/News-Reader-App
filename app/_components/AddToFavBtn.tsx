@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { updateFavoritesRows } from "../_lib/actions";
 import { AddedFavoriteType } from "../_lib/services";
 
@@ -8,9 +9,14 @@ interface AddToFavBtnPropsType {
 }
 
 const AddToFavBtn = ({ favorite, isAdded }: AddToFavBtnPropsType) => {
+  const router = useRouter();
   if (isAdded)
     return (
-      <button title="Your Favorite New" className="btn btn-circle">
+      <button
+        onClick={() => router.push("/favorites")}
+        title="Your Favorite New"
+        className="btn btn-circle"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="red"

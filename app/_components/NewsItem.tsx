@@ -10,8 +10,8 @@ interface NewsItemPropsType {
   details: NewsType;
 }
 const NewsItem = async ({ details }: NewsItemPropsType) => {
-  const { title, urlToImage, description, publishedAt, source } = details;
-  const singleFav = await getSingleFavorite(source.id);
+  const { title, urlToImage, description, publishedAt } = details;
+  const singleFav = await getSingleFavorite(title);
 
   const isAdded = singleFav ? true : false;
   return (
