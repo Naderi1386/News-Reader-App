@@ -40,7 +40,7 @@ const NewsItemDetailsModal = ({
             <NewsPoster isRounded img={urlToImage} />
           </div>
           <div className="mb-6 flex flex-col items-center gap-3">
-            <h2 className="font-bold text-xl italic text-center ">
+            <h2 className="font-bold text-lg sm:text-xl italic text-center ">
               {NewsTitle}
             </h2>
             <AddToFavBtn
@@ -54,8 +54,12 @@ const NewsItemDetailsModal = ({
               }}
             />
           </div>
-          <p className="mb-4">{cleanContent(content)}</p>
-          <a href={url} target="_blank" className="underline">
+          <p className="mb-4 text-sm sm:text-base">{cleanContent(content)}</p>
+          <a
+            href={url}
+            target="_blank"
+            className="underline text-sm sm:text-base transition-all duration-150 hover:text-custome-green font-semibold"
+          >
             See More
           </a>
         </div>
