@@ -1,9 +1,14 @@
 import { auth } from "@/auth";
-import FavoritesContent from "../_components/FavoritesContent";
-import FavoritesTitleSection from "../_components/FavoritesTItleSection";
+const FavoritesContent = dynamic(
+  () => import("../_components/FavoritesContent")
+);
+const FavoritesTitleSection = dynamic(
+  () => import("../_components/FavoritesTItleSection")
+);
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
-import FavoritesLength from "../_components/FavoritesLength";
+const FavoritesLength = dynamic(() => import("../_components/FavoritesLength"));
+import dynamic from "next/dynamic";
 
 export const generateMetadata = async () => {
   const session = await auth();
