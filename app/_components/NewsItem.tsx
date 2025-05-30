@@ -18,7 +18,11 @@ const NewsItem = async ({ details }: NewsItemPropsType) => {
       <NewsPoster isRounded={false} img={urlToImage} />
       <div className="grow">
         <NewsItemSmallTItle />
-        <NewsItemDetailsModal details={details} title={title} />
+        <NewsItemDetailsModal
+          isAdded={isAdded}
+          details={details}
+          title={title}
+        />
         <div className="flex items-center justify-between mt-3">
           <NewsItemDescription description={description} />
           <NewsItemPublishedDate date={publishedAt} />

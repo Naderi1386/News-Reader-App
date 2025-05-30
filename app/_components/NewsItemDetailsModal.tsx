@@ -13,9 +13,14 @@ function cleanContent(text: string) {
 interface NewsItemDetailsModal {
   title: string;
   details: NewsType;
+  isAdded: boolean;
 }
 
-const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
+const NewsItemDetailsModal = ({
+  title,
+  details,
+  isAdded,
+}: NewsItemDetailsModal) => {
   const { title: NewsTitle, content, urlToImage, url, description } = details;
 
   return (
@@ -39,7 +44,7 @@ const NewsItemDetailsModal = ({ title, details }: NewsItemDetailsModal) => {
               {NewsTitle}
             </h2>
             <AddToFavBtn
-            isAdded={false}
+              isAdded={isAdded}
               favorite={{
                 content,
                 description,
